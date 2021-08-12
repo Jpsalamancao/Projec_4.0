@@ -6,7 +6,7 @@ const App = () => {
         labels: ['maquina 1','maquina 2','maquina 3',
         'maquina 4','maquina 5', ],
         datasets:[{
-            label:'Habitantes',
+            label:'Rendimiento',
             backgroundColor:'rgba(0,255,0,1)',
             borderColor:'black',
             borderWidth:1,
