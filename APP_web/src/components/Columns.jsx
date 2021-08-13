@@ -1,7 +1,7 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
 
-const App = () => {
+const Columns = () => {
     const data ={
         labels: ['maquina 1','maquina 2','maquina 3',
         'maquina 4','maquina 5', ],
@@ -22,11 +22,11 @@ const App = () => {
 
 
     return(
-        <div className="App" styles={{width:'500px', height:'200px'}}>
+        <div className="Columns" styles={{width:'500px', height:'200px'}}>
             <h1>Prueba de una grafica</h1>
             <Bar data={data} options={opciones}/>
         </div>
     );
 }
 
-export default App;
+export default Columns;
