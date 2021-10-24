@@ -11,8 +11,8 @@
     width: 100%;
     margin: 0 0 2.5px;
     padding: 1px 10px 5.8px;
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     top: 0px;  
   }
