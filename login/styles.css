@@ -3,7 +3,7 @@ body {
    font-family: 'Muli', sans-serif;
    background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
    /* background: 
-    url(img/pattern.png),  
+    url(../assets/pattern.png),  
     radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
     background-blend-mode: screen; */
  }
@@ -13,30 +13,49 @@ body {
 
 .main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 15%;
+    align-items: center;
+    margin: 7%;
 } 
+
+.semicirculo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+/* border-style: solid; */
+width: 120px; 
+height: 60px; 
+border-top: solid 2.5px #696e7d;
+/* border: 2px solid #555;  */
+background-color: rgba(32, 27, 82, 0.2);
+-moz-border-radius: 100px 100px 0 0;
+-webkit-border-radius: 100px 100px 0 0;
+border-radius: 100px 100px 0 0;
+position: relative;
+}
 
 .container {
     width: 300px;
-    height: 462px;
+    height: 410px;
     padding: 0 25px 0 25px;
     /*opacity: 0.05;*/
     /*mix-blend-mode: luminosity;*/
     box-shadow: 0 1.5px 25px 0 var(--ffffff);
     border: solid 2.5px #696e7d;
+    border-top: transparent;
     background-blend-mode: luminosity;
     /*background-image: linear-gradient(to bottom, #000, #fff);*/
     background-color: rgba(32, 27, 82, 0.2);
     border-radius: 18px;
-    box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
-    0 10px 10px rgba(255,255,255, 0.20);
+    /* box-shadow: -10px 10px 18px rgba(255,255,255,0.13), 
+    -10px 10px 10px rgba(255,255,255, 0.20); */
     position: relative;
 }
 
 .container_logo{
     text-align: center;
-    margin-top: 5px;
+    margin-top: -50px;
 }
 
   img.Producciones-Quimicas-logo {
