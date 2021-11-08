@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+ font-family: 'Muli', sans-serif;
+ background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+ /* background: 
+  url(img/pattern.png),  
+  radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+  background-blend-mode: screen; */
+  display: flex;
+  justify-content: center;
+  margin: 15%;
+}
+* {
+ box-sizing: border-box;
+}

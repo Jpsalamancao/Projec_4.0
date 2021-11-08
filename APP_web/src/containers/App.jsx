@@ -1,13 +1,24 @@
 import React from 'react';
-import {Bar} from 'react-chartjs-2';
-import Columns from '../components/Columns';
-import MultiAxisChartjs from '../components/MultiAxisChartjs';
+import Layout from '../components/Layout';
+import Login from '../components/Login';
+import '../styles/global.css';
 
-const App = () => (
-    <div className="App">
-        <Columns/>
-        <MultiAxisChartjs/>
-    </div>
-);
+//import Columns from '../components/Columns';
+//import MultiAxisChartjs from '../components/MultiAxisChartjs';
+
+// const App = () => (
+//     <div className="App">
+//         <Columns/>
+//         <MultiAxisChartjs/>
+//     </div>
+// );
+
+const App = () => {
+    return(
+        <Layout>
+            <Login/>
+        </Layout>
+    );
+}
 
 export default App;
