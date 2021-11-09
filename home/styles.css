@@ -1,10 +1,10 @@
   body {
        margin: 0;
       font-family: 'Muli', sans-serif;
-      background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
-      /* background: url(../assets/pattern.png),
+      /* background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ; */
+      background: url(../assets/pattern.png),
   radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31);
-  background-blend-mode: screen;*/
+  background-blend-mode: screen;
     }
     * {
       box-sizing: border-box;
@@ -281,5 +281,10 @@
     color: white;
   }
   @media only screen and (max-width: 600px) {
-
+  
   }
+  
+.input:focus{
+  box-shadow: 0 1px 6px 0 white;
+    border-color: white;
+}
