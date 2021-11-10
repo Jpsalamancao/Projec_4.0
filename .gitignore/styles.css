@@ -1,44 +1,22 @@
-html, body{
-    background-color: #eeeeee;
-    font-family: Arial, sans-serif;
-    color: #ee4630;
-}
 
-img, h1{
-    display: inline-block;
-    font-size: 60px;
-}
-
-container{
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-}
-
-.diamante{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* border-style: solid; */
-  width: 130px; 
-  height: 65px; 
-  border-top: solid 2.5px #696e7d;
-  /* border: 2px solid #555;  */
-  background-color: rgba(32, 27, 82, 0.2);
-  -moz-border-radius: 100px 100px 0 0;
-  -webkit-border-radius: 100px 100px 0 0;
-  border-radius: 100px 100px 0 0;
-  position: relative;
-}
-
-.diamante::after{
-    content: "";
-    position: absolute;
-    top: 65px;
-    /* left: -25px; */
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: red transparent transparent transparent;
-    border-width: 70px 50px 500px 50px;
-}
+  .ticket {
+    background-color: blue;
+    height: 600px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    clip-path: polygon(
+    0 0,
+    0% 42%,
+    5% 42%,
+    5% 58%,
+    0 58%,
+    0 100%,
+    100% 100%,
+    100% 58%,
+    95% 58%,
+    95% 42%,
+    100% 42%,
+    100% 0
+    );
+  } 
