@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 7%;
+  margin: 5%;
 } 
 
 .semicirculo{
@@ -28,16 +28,17 @@ body {
   /* border-top: solid 2.5px #696e7d; */
   /* border: 2px solid #555;  */
   background-color: rgba(13, 11, 41, 0.3);
-  -moz-border-radius: 100px 100px 0 0;
-  -webkit-border-radius: 100px 100px 0 0;
+  /* -moz-border-radius: 100px 100px 0 0; */
+  /* -webkit-border-radius: 100px 100px 0 0; */
   border-radius: 100px 100px 0 0;
   /* position: relative; */
 }
 
 .container {
   width: 300px;
-  height: 420px;
+  height: 400px;
   padding: 0 25px 0 25px;
+  /* margin-top: 0; */
   /*opacity: 0.05;*/
   /*mix-blend-mode: luminosity;*/
   /* box-shadow: 0 1.5px 25px 0 var(--ffffff); */
@@ -116,6 +117,7 @@ img.Producciones-Quimicas-logo {
 }
 
 .boton {
+  display: flex;
   width: 125px;
   height: 40px;
   margin: 30px 62.5px 34.5px;
@@ -126,15 +128,17 @@ img.Producciones-Quimicas-logo {
   font-family: SitkaSmall;
   font-size: 20px;
   color: white;
-  text-align: center;
-  /* text-decoration: none; */
-  /* display: inline-block; */
+  /* text-align: center; */
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
   transition-duration: 0.3s;
   cursor: pointer;
 }
 
 .boton:hover{
   border: solid 4px rgb(177, 176, 176);
+  /* font-size: 25px; */
 }
 
 .container_link{
