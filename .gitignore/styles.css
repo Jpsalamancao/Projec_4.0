@@ -1,22 +1,16 @@
+body {
+  background: cyan;
+}
 
-  .ticket {
-    background-color: blue;
-    height: 600px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
-    clip-path: polygon(
-    0 0,
-    0% 42%,
-    5% 42%,
-    5% 58%,
-    0 58%,
-    0 100%,
-    100% 100%,
-    100% 58%,
-    95% 58%,
-    95% 42%,
-    100% 42%,
-    100% 0
-    );
-  } 
+.ticket {
+  background-color: blue;
+  height: 200px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  --mask1: radial-gradient(circle at 0 50%, transparent 0, transparent 5%, black 5%, black 90%, transparent 90%, transparent);
+  --mask2: radial-gradient(circle at 100% 50%, transparent 0, transparent 5%, black 5%, black 90%, transparent 90%, transparent);
+  /* webkit needed for Chrome */
+  -webkit-mask-image: var(--mask1), var(--mask2);
+  mask-image: var(--mask1), var(--mask2);
+} 

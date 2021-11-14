@@ -105,12 +105,12 @@
     justify-content: center;
     flex-direction: row;
     box-sizing: border-box;
+    flex-wrap: wrap;
     
   }
 
   .Graphs_comparative{
-
-    width: 100%;
+    max-width: 650px;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     white-space: nowrap;
@@ -127,13 +127,13 @@
       -o-object-fit: cover;
           object-fit: cover;
   }
-  .Graphs_comparative p{
+  /* .Graphs_comparative p{
     margin: -5% 0 3% 1%;
     padding: 0px 0px 0px 0px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
-  }
+  } */
   
   .Graf_comp_proceso-img{
     width: 100%;
@@ -151,7 +151,7 @@
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .Performance_all{
@@ -167,7 +167,7 @@
   .Performance_box{
     width: 200px;
     height: 160px;
-    margin: 5px 28px 5px 0;
+    margin: 5px 14px 5px 14px;
     padding: 5px 7.5px 7.5px 8px;
     border-radius: 18px;
     box-shadow: 0 1.5px 10px 0 var(--ffffff);
@@ -176,7 +176,7 @@
     box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
     0 10px 10px rgba(255,255,255, 0.20);
     position: relative;
-    
+    text-decoration: none;
   }
 
   .Puesto{
@@ -264,10 +264,10 @@
   }
 
   .input{
-    width: 30%;
-    height: 50%;
+    width: 40%;
+    height: 30px;
     padding: 0 0 0 0;
-    margin-top: 3%;
+    margin-top: 1%;
     background-color: rgba(255,255,255,0.1);
     border: 1px solid white;
     border-radius: 25px;
@@ -282,6 +282,11 @@
   }
   @media only screen and (max-width: 600px) {
   
+  }
+
+  .input:hover{
+    box-shadow: 0 1px 6px 0 white;
+    border-color: white;
   }
   
 .input:focus{

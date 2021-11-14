@@ -83,9 +83,9 @@ body {
 
 .input{
   width: 30%;
-  height: 50%;
+  height: 30px;
   padding: 0 0 0 0;
-  margin-top: 3%;
+  margin-top: 1%;
   background-color: rgba(255,255,255,0.1);
   border: 1px solid white;
   border-radius: 25px;
@@ -121,7 +121,7 @@ section{
 }
 
 .container_grafica{
-  width: 700px;
+  width: 650px;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   white-space: nowrap;
