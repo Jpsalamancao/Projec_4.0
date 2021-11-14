@@ -26,6 +26,22 @@ body {
 }
 
 .container {
+<<<<<<< HEAD
+    width: 300px;
+    height: 462px;
+    padding: 0 25px 0 25px;
+    background-color: rgba(255,255,255,0.1);
+    /*mix-blend-mode: luminosity;*/
+    box-shadow: 0 1.5px 25px 0 var(--ffffff);
+    border: solid 2.5px #696e7d;
+    background-blend-mode: luminosity;
+    /*background-image: linear-gradient(to bottom, #000, #fff);*/
+    /* background-color: #131149; */
+    border-radius: 18px;
+    box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
+    0 10px 10px rgba(255,255,255, 0.20);
+    position: relative;
+=======
   width: 300px;
   height: 400px;
   padding: 0 25px 0 25px;
@@ -35,6 +51,11 @@ body {
   border-radius: 18px;
   box-shadow: -10px 10px 10px rgba(255,255,255,0.13), 
   10px 10px 10px rgba(255,255,255, 0.20);
+<<<<<<< HEAD
+=======
+  /* position: relative; */
+>>>>>>> f0186b30cca6fdaddd9183dda96d040fdd537bd1
+>>>>>>> 832f1191e08c07dab90a849ac75b40d9d1dd8d03
 }
 
 .container_logo{
