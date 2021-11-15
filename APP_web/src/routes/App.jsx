@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Layout from '../containers/Layout';
-import Login from '../containers/Login';
+import Login_Home from '../containers/Login';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import '../styles/global.css';
@@ -9,9 +9,10 @@ import '../styles/global.css';
 
 const App = () => {
     return(
-        <Router>
-                <Login/>
-        </Router>
+        <Routes>
+                <Route path ="/" exact element ={<Login_Home/>}/>
+                <Route path ="*" exact element ={< NotFound />}/>
+        </Routes>
     );
 }
 
