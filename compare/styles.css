@@ -3,9 +3,10 @@ body {
   font-family: 'Muli', sans-serif;
   /* background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ; */
   background: url(../assets/pattern.png),
-  radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31);
-  background-blend-mode: screen;
-}*{
+    radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31);
+    background-blend-mode: screen;
+}
+*{
   box-sizing: border-box;
 }
 
@@ -27,7 +28,6 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 } 
 
 .header__menu {
@@ -82,7 +82,7 @@ body {
 }
 
 .input{
-  width: 30%;
+  width: 40%;
   height: 30px;
   padding: 0 0 0 0;
   margin-top: 1%;
@@ -99,18 +99,31 @@ body {
   color: white;
 }
 
-.input:focus{
-  box-shadow: 0 1px 6px 0 white;
-  border-color: white;
-}
-
 .input:hover{
   box-shadow: 0 1px 6px 0 white;
   border-color: white;
 }
 
+.input:focus{
+box-shadow: 0 1px 6px 0 white;
+  border-color: white;
+}
+
+
+
+
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
 .section{
-  width: 100%;
+  width: 50%;
   margin: 5% 0 5% 0;
   position: relative;
   display: flex;
@@ -133,7 +146,7 @@ body {
 
 h1{
   font-family: SitkaSmall;
-  font-size: 25px;
+  font-size: 22px;
   margin: 0 0 10px 0;
   font-weight: bold;
   font-stretch: normal;
@@ -155,7 +168,7 @@ h1{
 }
 
 .container_info{
-  width: 325px;
+  width: 80%;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -169,8 +182,9 @@ h1{
 
 .item{
   display: flex;
-  width: 320px;
   margin-top: 3.5%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .item p{
@@ -203,6 +217,14 @@ h1{
   color: white;
 }
 
+
+
+
+
+
+
+
+
 .footer {
   display: flex;
   align-items: center;
@@ -214,20 +236,16 @@ h1{
 .container_footer{
   width: 45%;
   height: 30px;
-  /* margin: 25px 285px 0; */
-  /* padding: 10px 18.5px 10px 19px; */
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .footer a {
   color: white;
   cursor: pointer;
   font-size: 14px;
-  /* padding-left: 30px; */
   margin: 0 2px 0 2px;
   text-decoration: none;
   text-align: center;
