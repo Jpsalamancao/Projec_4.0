@@ -23,7 +23,7 @@ const Columns = () => {
 
     return(
         <div className="Columns" styles={{width:'500px', height:'200px'}}>
-            <h1>Prueba de una grafica</h1>
+            <h1>GRAFICA COMPARATIVA</h1>
             <Bar data={data} options={opciones}/>
         </div>
     );
