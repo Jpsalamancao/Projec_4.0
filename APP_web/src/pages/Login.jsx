@@ -1,10 +1,21 @@
-import React from "react";
-import '../styles/Login.scss';
-import logo from '../assets/images/PQ_logo.png'
+import React, {useRef} from "react";
+import '@styles/Login.scss';
+import logo from '@Logos/PQ_logo.png'
 
     
 
 const Login = () => {
+	const form = useRef(null);
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const formData = new FormData(form.current);
+		const data = {
+			usename: formData.get('email'),
+			password: formData.get('password')
+		}
+		console.log(data);
+    }
     return (
         <div className="container_PQ">
             <div className="semicirculo">
@@ -15,18 +26,21 @@ const Login = () => {
                     className="Producciones-Quimicas-logo"
                     alt="logo"/>
                 </div>
-                <div className="container_data">
-                    <p>Usuario</p>
-                    <input type="text" class="input" 
-                    placeholder="jpsalaman"/>
-                    <p>Contraseña</p>
-                    <input type="password" class="input"
-                    placeholder="12345"/>
-                </div>
+                <form action="/" className= "form" ref={form}>
+                    <div className="container_data">
+                        <p>Usuario</p>
+                        <input type="text" name="email" className="input" 
+                        placeholder="jpsalaman"/>
+                        <p>Contraseña</p>
+                        <input type="password" name="password" className="input"
+                        placeholder="12345"/>
+                    </div>
 
-                <a href="../home/index.html" class="boton">
-                    Ingresar               
-                </a>
+                    <button className="boton" 
+                    onClick ={ handleSubmit}>
+                        Ingresar               
+                    </button>
+                </form>
 
                 <div className="container_link">
                     <p><a href="/">¿Olvido la contraseña?</a></p>

@@ -10,7 +10,13 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias:{
+      '@components':path.resolve(__dirname, 'src/components/'),
+      '@containers':path.resolve(__dirname, 'src/containers/'),
+      '@styles':path.resolve(__dirname, 'src/styles/'),
+      '@Logos':path.resolve(__dirname, 'src/assets/icons/'),
+    }
   },
   module: {
     rules: [
@@ -36,7 +42,7 @@ module.exports = {
         ]
       },
       {
-        test:/\.png/,
+        test:/\.(png|svg|jpg)$/,
         type: 'asset/resource',
 
       }
