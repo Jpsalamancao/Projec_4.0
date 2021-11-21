@@ -13,7 +13,7 @@ background: linear-gradient(135deg, #150a33, #39396e, #322d96, #322d96, #39396e,
 
 .main{
   /* max-height: 900px; */
-  min-height: 700px;
+  min-height: 725px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@ background: linear-gradient(135deg, #150a33, #39396e, #322d96, #322d96, #39396e,
 
 .text h1{
   font-size: 150px;
-  margin: -40px 0 0 0;
+  margin: -40px 0 5% 0;
   text-align: center;
   color: #837c7b;
 }
@@ -47,5 +47,5 @@ h2{
 .imagen{
   min-width: 300px;
   width: 80%;
-  margin: 0 0 0 0;
+  margin: -5% 0 0 0;
 }
