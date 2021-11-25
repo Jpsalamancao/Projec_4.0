@@ -4,6 +4,7 @@ import Multi_lineal from '../components/Multi_lineal';
 import Columns from '../components/Columns';
 import Login_Home from '../pages/Login';
 import NotFound from '../pages/NotFound';
+import Home from '../pages/Home';
 import '../styles/global.css';
 
 
@@ -13,6 +14,7 @@ const App = () => {
                 <Route path ="/" exact element ={<Login_Home/>}/>
                 <Route path ="*"  element ={< NotFound />}/>
                 <Route path ="/Columns" element= {< Columns/>}/>
+                <Route path ="/Home" element= {< Home/>}/>
                 <Route path ="/Multi_lineal" element={<Multi_lineal/>}/>
         </Routes>
     );
