@@ -29,7 +29,7 @@ const Header = () => {
                         <p>Perfil</p>
                     </div>
                     <ul>
-                        <li><a href="../login/index.html">Cerrar Sesión</a></li>
+                        <li><a href="/">Cerrar Sesión</a></li>
                     </ul>  
 
                 </div>
