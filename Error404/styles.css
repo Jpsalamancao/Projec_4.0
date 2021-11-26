@@ -1,11 +1,11 @@
 body {
       margin: 0;
     font-family: 'Muli', sans-serif;
-    /* background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ; */
+    background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
     /* background: url(../assets/pattern.png),
 linear-gradient(135deg, #150a33, #39396e, #322d96, #322d96, #322d96, #39396e, #150a33);
 background-blend-mode: screen; */
-background: linear-gradient(135deg, #150a33, #39396e, #322d96, #322d96, #39396e, #150a33)
+/* background: linear-gradient(135deg, #150a33, #39396e, #322d96, #322d96, #39396e, #150a33); */
 }
 * {
   box-sizing: border-box;
