@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from '@containers/Header';
 import Columnas from '@components/Columns';
+import Multi_lineal from '@components/Multi_lineal';
 
 
 const Home = () => {
 	return (
 		<>
 			<Header />
-            <Columnas/>
+            {/* <Columnas/> */}
+			<Multi_lineal/>
 		</>
 	);
 }

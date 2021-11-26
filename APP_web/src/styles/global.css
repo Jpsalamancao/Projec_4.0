@@ -1,7 +1,8 @@
 body {
   margin: 0;
- font-family: 'Muli', sans-serif;
- background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+  font-family: 'Muli', sans-serif;
+  background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+  /* background-color: #414144; */
 }
 * {
  box-sizing: border-box;

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import '../styles/Multi_lineal.scss';
+
 
 const data = {
     labels: ['1', '2', '3', '4', '5', '6', '7','8','9','10'],
@@ -59,7 +61,7 @@ const Multi_lineal = () => {
     return (
         <div className='MultiAxisChartjs' styles={{width:'500px', height:'200px'}}>
             <div className='header'>
-               <h1 className='title'>GRFICA DE PROCESO </h1>
+               <h1 className='Grafica_proceso'>GRÁFICA DE PROCESO </h1>
             </div>
             <Line data={data} options={options} />
       </div>
