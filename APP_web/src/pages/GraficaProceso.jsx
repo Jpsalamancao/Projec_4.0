@@ -8,8 +8,10 @@ const GraficaProceso = () => {
 	return (
 		<>
 			<Header />
-			<Columnas/>
-            <Multi_lineal/> 
+			<div>
+				<h1> GRAFICAS DE PROCESO</h1>
+				<Columnas/> 
+			</div>
 		</>
 	);
 }

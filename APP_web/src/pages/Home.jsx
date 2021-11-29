@@ -9,7 +9,7 @@ const Home = () => {
 		<>
 			<Header />
 			<div>
-				<h1> DCONTENID DEL HOME</h1>
+				<h1> CONTENIDO DEL HOME</h1>
 				<Columnas/> 
 			    <Multi_lineal/> 
 			</div>

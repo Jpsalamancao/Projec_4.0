@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import GraficaComparativa from '../pages/GraficaComparativa';
-import Columns from '../components/Columns';
+import GraficaProceso from '../pages/GraficaProceso';
 import Login_Home from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
@@ -15,7 +15,7 @@ const App = () => {
                 <Route path ="*"  element ={< NotFound />}/>
                 <Route path ="/Home" element= {< Home/>}/>
                 <Route path ="/GraficaComparativa" element={<GraficaComparativa/>}/>
-                <Route path ="/GraficaProceso" element= {< GraficaProcesos/>}/>
+                <Route path ="/GraficaProceso" element= {< GraficaProceso/>}/>
         </Routes>
     );
 }

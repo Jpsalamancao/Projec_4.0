@@ -6,9 +6,12 @@ import Multi_lineal from '@components/Multi_lineal';
 
 const GraficaComparativa = () => {
 	return (
-		<>
-			<Header />
-			<Multi_lineal/>
+		<>  
+		    <Header />
+			<div>
+				<h1> GRAFICAS COMPARATIVAS</h1>
+			    <Multi_lineal/> 
+			</div>
 		</>
 	);
 }
