@@ -4,18 +4,14 @@ import Columnas from '@components/Columns';
 import Multi_lineal from '@components/Multi_lineal';
 
 
-const Home = () => {
+const GraficaProceso = () => {
 	return (
 		<>
 			<Header />
-			<div>
-				<h1> DCONTENID DEL HOME</h1>
-				<Columnas/> 
-			    <Multi_lineal/> 
-			</div>
-
+			<Columnas/>
+            <Multi_lineal/> 
 		</>
 	);
 }
 
-export default Home;
+export default GraficaProceso;

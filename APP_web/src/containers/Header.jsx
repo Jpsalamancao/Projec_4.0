@@ -2,6 +2,7 @@ import React from "react";
 import UD from '@Logos/UD.png';
 import Login from '@Logos/user-icon.png';
 import '@styles/Header.scss';
+//import '@styles/bootstrap.css';
 
 
 const Header = () => {
@@ -11,13 +12,13 @@ const Header = () => {
             <div className="header_centro">
                 <ul>
                     <li>
-                            <a href="/">HOME</a>
+                            <a href="/Home">INICIO</a>
                     </li>
                     <li>
-                            <a href="/">GRAFICAS COMPARATIVAS</a>
+                            <a href="/GraficaComparativa">GRAFICAS COMPARATIVAS</a>
                     </li>
                     <li>
-                            <a href="/">GRAFICA DE PROCESO</a>
+                            <a href="/GraficaProceso">GRAFICA DE PROCESO</a>
                     </li>
                 </ul>
             
@@ -34,6 +35,8 @@ const Header = () => {
 
                 </div>
          </nav>
+
+
         
 
     );

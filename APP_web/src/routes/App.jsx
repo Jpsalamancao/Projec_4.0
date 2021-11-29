@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
-import Multi_lineal from '../components/Multi_lineal';
+import GraficaComparativa from '../pages/GraficaComparativa';
 import Columns from '../components/Columns';
 import Login_Home from '../pages/Login';
 import NotFound from '../pages/NotFound';
@@ -13,9 +13,9 @@ const App = () => {
         <Routes>
                 <Route path ="/" exact element ={<Login_Home/>}/>
                 <Route path ="*"  element ={< NotFound />}/>
-                <Route path ="/Columns" element= {< Columns/>}/>
                 <Route path ="/Home" element= {< Home/>}/>
-                <Route path ="/Multi_lineal" element={<Multi_lineal/>}/>
+                <Route path ="/GraficaComparativa" element={<GraficaComparativa/>}/>
+                <Route path ="/GraficaProceso" element= {< GraficaProcesos/>}/>
         </Routes>
     );
 }
