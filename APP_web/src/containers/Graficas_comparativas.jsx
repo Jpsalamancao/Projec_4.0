@@ -12,7 +12,6 @@ const Grafica_comparativas = () => {
 
 	return (
 		<>
-			<Header />
 			<div className="HOME">
 				<h1> GRAFICAS COMPARATIVAS</h1>
                 <div className="HOME_GRAF">

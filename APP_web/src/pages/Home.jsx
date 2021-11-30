@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@components/Header';
-import Grafica_comparativas from '@containers/Grafica_comparativas';
+import Graficas_comparativas from '@containers/Graficas_comparativas';
 
 
 
@@ -11,7 +11,7 @@ const Home = () => {
 	return (
 		<>
 			<Header />
-			<Grafica_comparativas/>
+			<Graficas_comparativas/>
 
 		</>
 	);
