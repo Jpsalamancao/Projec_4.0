@@ -1,5 +1,6 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
+import '../styles/Columns.scss';
 
 const Columns = () => {
     const data ={
@@ -7,12 +8,12 @@ const Columns = () => {
         'maquina 4','maquina 5', ],
         datasets:[{
             label:'Rendimiento',
-            backgroundColor:'rgba(0,255,0,1)',
+            backgroundColor:'rgba(91, 192, 222 ,1)',
             borderColor:'black',
             borderWidth:1,
             hoverBackgroundColor: 'rgba(0,255,0,0.2)',
             hoverBorderColor: '#fff05',
-            data: [50, 10, 30, 45, 82]
+            data: [50, 10, 30, 45, 2000]
         }]
     };
     const opciones={
@@ -22,8 +23,10 @@ const Columns = () => {
 
 
     return(
-        <div className="Columns" styles={{width:'500px', height:'200px'}}>
-            <h1>GRAFICA COMPARATIVA</h1>
+        <div className="Columns">
+            <div className="Titel_Columns">
+                <h1>GRAFICA COMPARATIVA</h1>
+            </div>
             <Bar data={data} options={opciones}/>
         </div>
     );

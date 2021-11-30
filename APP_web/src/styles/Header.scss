@@ -66,10 +66,6 @@ nav{
 }
 
 .header_centro ul li a:hover{
-  // border: 1px solid var(--hospital-green);
-  // color: black;
-  // display: flex;
-	// align-items: center;
   border: 1px solid var(--hospital-green);
 	color: var(--hospital-green)
 } 
@@ -91,12 +87,11 @@ nav{
   text-align: right;
 }
 
-// .header__menu:hover ul, ul:hover {
-//   display: block;
-// }
 
 .header__menu li {
   margin: 1px 0px;
+  display: flex;
+  align-items: center;
 }
 
 .header__menu  li a {
@@ -109,8 +104,8 @@ nav{
 }
  
 .header__menu--profile {
-  align-items: center;
   display: flex;
+  align-items: center;
   cursor: pointer;
 }
 

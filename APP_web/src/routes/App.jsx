@@ -5,6 +5,7 @@ import GraficaProceso from '../pages/GraficaProceso';
 import Login_Home from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
+import  Grafica_comparativas from '../containers/Graficas_comparativas';
 import '../styles/global.css';
 
 
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path ="/Home" element= {< Home/>}/>
                 <Route path ="/GraficaComparativa" element={<GraficaComparativa/>}/>
                 <Route path ="/GraficaProceso" element= {< GraficaProceso/>}/>
+                <Route path ="/Grafica_comparativas" element= {<  Grafica_comparativas/>}/>
         </Routes>
     );
 }

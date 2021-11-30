@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import UD from '@Logos/UD.png';
 import Login from '@Logos/user-icon.png';
 import '@styles/Header.scss';
@@ -6,6 +6,11 @@ import '@styles/Header.scss';
 
 
 const Header = () => {
+
+	const [toggle, setToggle] = useState(false);
+	const handleToggle = () => {
+		setToggle(!toggle);
+	}
     return(
         <nav> 
             <img className="header_img" src={UD} alt="UD"/>
@@ -23,17 +28,14 @@ const Header = () => {
                 </ul>
             
             </div>
-            {/* <input type="text" className="input" placeholder="Buscar el lote"/> */}
-                <div className="header__menu">
-                    <div className="header__menu--profile">
-                        <img src={Login} alt=""/>
-                        <p>Perfil</p>
-                    </div>
-                    <ul>
-                        <li><a href="/">Cerrar Sesión</a></li>
-                    </ul>  
-
+            <div className="header__menu">
+                <div className="header__menu--profile">
+                    <img src={Login} alt="" onClick={handleToggle}/>
+                    <p>Perfil</p>
                 </div>
+                {toggle &&  <li><a href="/">Cerrar Sesión</a></li>}
+            </div>
+                
          </nav>
 
 
