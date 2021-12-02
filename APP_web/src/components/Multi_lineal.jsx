@@ -34,6 +34,7 @@ const data = {
   };
   
   const options = {
+    responsive: true,
     scales: {
       yAxes: [
         {
@@ -53,13 +54,15 @@ const data = {
         },
       ],
     },
+    width: '500px',
+    height:'500px',
   };
-  
+
 
 const Multi_lineal = () => {
 
     return (
-        <div className='MultiAxisChartjs' styles={{width:'500px', height:'200px'}}>
+        <div className='MultiAxisChartjs'>
             <div className='header'>
                <h1 className='Grafica_proceso'>GRÁFICA DE PROCESO </h1>
             </div>

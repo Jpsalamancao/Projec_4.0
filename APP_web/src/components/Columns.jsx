@@ -13,12 +13,12 @@ const Columns = () => {
             borderWidth:1,
             hoverBackgroundColor: 'rgba(0,255,0,0.2)',
             hoverBorderColor: '#fff05',
-            data: [50, 10, 30, 45, 2000]
+            data: [50, 10, 30, 45, 100]
         }]
     };
     const opciones={
         maintainAspectRatio: false,
-        responsive: false
+        responsive: true
     }
 
 
