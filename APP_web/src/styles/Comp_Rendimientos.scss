@@ -1,11 +1,9 @@
-.HOME{
+.Conten{
     margin: 0;
-    width: 100%;
-    height: 450px;
     display: flex;
     flex-direction: column;
 }
-.HOME h1 {
+.Conten h1 {
     color: #e9ecef;
     display: flex;
     justify-content: center;
@@ -13,8 +11,8 @@
 
 }
 
-.HOME_GRAF{
-    margin-top: 10PX;
+.Conten_lote{
+    margin-top: 0;
     display: flex;
-    justify-content: space-around
+    justify-content: center;
 }

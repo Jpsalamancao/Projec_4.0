@@ -1,7 +1,6 @@
 import React from "react";
 import Columnas from '@components/Columns';
 import Multi_lineal from '@components/Multi_lineal';
-import Header from '@components/Header';
 import '@styles/Grafica_comparativas.scss';
 
 

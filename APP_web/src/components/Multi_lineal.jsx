@@ -4,11 +4,12 @@ import '../styles/Multi_lineal.scss';
 
 
 const data = {
-    labels: ['1', '2', '3', '4', '5', '6', '7','8','9','10'],
+    labels: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12','15','18','19','20',
+    '21','22','23','24','25','26','27','28','30','31','32','33','34','35','36','37','38','39','40'],
     datasets: [
       {
         label: '# LOTE 200',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 3, 5, 2, 3, 10, 15, 20, 50, 100, 110, 140],
         fill: false,
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgba(255, 99, 132, 0.2)',
@@ -16,7 +17,7 @@ const data = {
       },
       {
         label: '# LOTE 300',
-        data: [1, 2, 1, 1, 2, 2],
+        data: [1, 2, 1, 1, 2, 2, 10, 20, 50, 100, 110, 120, 150, 130,100 ],
         fill: false,
         backgroundColor: 'rgb(54, 162, 235)',
         borderColor: 'rgba(54, 162, 235, 0.2)',
@@ -24,7 +25,7 @@ const data = {
       },
       {
         label: '# LOTE 350',
-        data: [3, 1, 4, 3, 1, 2],
+        data: [3, 1, 4, 3, 1, 2, 10, 20, 30, 40, 50, 60, 70, 100, 120, 150, ],
         fill: false,
         backgroundColor: 'rgb(54, 162, 2)',
         borderColor: 'rgba(54, 162, 2, 0.2)',
@@ -34,7 +35,8 @@ const data = {
   };
   
   const options = {
-    responsive: true,
+    // responsive: true,
+    // maintainAspectRatio: true,
     scales: {
       yAxes: [
         {
@@ -54,8 +56,7 @@ const data = {
         },
       ],
     },
-    width: '500px',
-    height:'500px',
+
   };
 
 
