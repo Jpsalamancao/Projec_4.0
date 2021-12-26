@@ -2,7 +2,7 @@ import React from "react";
 import One_linea from '@components/One_linea';
 import Container_info_compare from "../components/Container_info_compare";
 import "../styles/Container_info_compare.scss";
-import Lupa from '@Logos/lupa.png'
+import Lupa from '@Logos/lupa.png';
 
 
 const Container_compare = () => {

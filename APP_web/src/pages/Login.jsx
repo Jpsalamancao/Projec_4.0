@@ -36,7 +36,7 @@ const Login = () => {
                         placeholder="12345"/>
                     </div>
 
-                    <button className="boton" 
+                    <button className="boton" href="/Home" 
                     onClick ={ handleSubmit}>
                         Ingresar               
                     </button>

@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '@components/Header';
-import One_linea from '@components/One_linea';
+import Container_GraficasProceso from '@containers/Container_GraficasProceso';
 
 
 const GraficaProceso = () => {
 	return (
 		<>
 			<Header />
-			<div>
+			<div className='GraficaProceso'>
 				<h1> GRAFICAS DE PROCESO</h1>
-				< One_linea/> 
+				<Container_GraficasProceso/> 
 			</div>
 		</>
 	);
