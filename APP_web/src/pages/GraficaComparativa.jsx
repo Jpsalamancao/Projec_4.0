@@ -1,18 +1,21 @@
 import React from 'react';
 import Header from '@components/Header';
-import Multi_lineal from '@components/Multi_lineal';
-import Container_info from '../components/Container_info';
+import Container_compare from '@containers/Container_compare';
+import "../styles/GraficaComparativa.scss";
+
+
 
 
 const GraficaComparativa = () => {
 	return (
 		<>  
 		    <Header />
-			<div>
-				<h1> GRAFICAS COMPARATIVAS</h1>
-			    <Multi_lineal/> 
-				<Container_info/>
+			<h1> GRAFICAS COMPARATIVAS</h1>		
+			<div className="Contenedor_GraficaComparativa_info">
+			<Container_compare/>
+			<Container_compare/>
 			</div>
+
 		</>
 	);
 }

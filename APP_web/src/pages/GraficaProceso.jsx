@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '@components/Header';
-import Columnas from '@components/Columns';
-import Multi_lineal from '@components/Multi_lineal';
+import One_linea from '@components/One_linea';
 
 
 const GraficaProceso = () => {
@@ -10,7 +9,7 @@ const GraficaProceso = () => {
 			<Header />
 			<div>
 				<h1> GRAFICAS DE PROCESO</h1>
-				<Columnas/> 
+				< One_linea/> 
 			</div>
 		</>
 	);

@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/Container_info.scss";
 
 
-const Container_info = () => {
+
+const Container_info_compare = () => {
     return (
         <div className="Container_info">
             <div className="item">
@@ -14,6 +14,19 @@ const Container_info = () => {
                 <div className="box"></div>
             </div>
             <div className="item">
+                <h2>Contenido metalico primer ajuste</h2>
+                <div className="box"></div>
+            </div>
+            <div className="item">
+                <h2>Acides</h2>
+                <div className="box"></div>
+            </div>
+            <div className="item">
+                <h2>Contenido metalico final</h2>
+                <div className="box"></div>
+            </div>
+
+            <div className="item">
                 <h2>Cantidad</h2>
                 <div className="box"></div>
             </div>
@@ -22,31 +35,7 @@ const Container_info = () => {
                 <div className="box"></div>
             </div>
             <div className="item">
-                <h2>Varsol</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Alkonat</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Proquat BC-50</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Acido propinico</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Acido 2 Etil Hexoico</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Metal Cobalto en Polvo</h2>
-                <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Tierra Filtratadicamex 4170</h2>
+                <h2>Tiempo de porceso</h2>
                 <div className="box"></div>
             </div>
 
@@ -55,4 +44,4 @@ const Container_info = () => {
 
 }
 
-export default Container_info;
+export default  Container_info_compare;
