@@ -12,24 +12,34 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="../home/index.html" class="header_img">
-            <img class="header_img" src="../assets/UD.png" alt="UD">
-        </a>
-        <input type="text" class="input" placeholder="Buscar el lote">
+    <header class="header"> 
+        <img class="header_img" src="../assets/UD.png" alt="UD">
+        </div>
+        <!-- <input type="text" class="input" placeholder="Buscar el lote"> -->
+        <div class="navegar">
+            <a href="../home/index.html">INICIO</a>
+            <a href="../compare/index.html">GRAFICAS COMPARATIVAS</a>
+            <a href="../info/index.html">GRAFICAS DEL PROCESO</a>
+        </div>
         <div class="header__menu">
             <div class="header__menu--profile">
-                <img src="../assets/user-icon.png" alt="">
                 <p>Perfil</p>
+                <img src="../assets/user-icon.png" alt="">
             </div>
             <ul>
                 <li><a href="../login/index.html">Cerrar Sesión</a></li>
-            </ul>
+            </ul>  
+
         </div>
-    </header class>
+    </header>
 
     <section class="main">
         <section class="section">
+            <div class="tituloComparativa">
+                <h1>Lote: </h1>
+                <input type="text">
+                <button><img src="../assets/lupa.png" alt="" onclick="buscar()"></button>
+            </div>
             <div class="container_grafica">
                 <!-- <h1>Grafica del proceso</h1> -->
                 <img src="../assets/Imagen 6.png" class="grafica">
@@ -37,52 +47,58 @@
             <div class="container_info">
                 <!-- <h1>Informacion</h1> -->
                 <div class="item">
-                    <p>Responsable</p>
+                    <h2>Responsable</h2>
+                    <div class="box"></div>
+                </div>
+                <!-- <div class="item">
+                    <h2>Lote</h2>
+                    <div class="box"></div>
+                </div> -->
+                <div class="item">
+                    <h2>Cantidad</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Lote</p>
+                    <h2>Rendimiento</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Cantidad</p>
+                    <h2>Varsol</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Rendimiento</p>
+                    <h2>Alkonat</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Varsol</p>
+                    <h2>Proquat BC-50</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Alkonat</p>
+                    <h2>Acido propinico</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Proquat BC-50</p>
+                    <h2>Acido 2 Etil Hexoico</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Acido propinico</p>
+                    <h2>Metal Cobalto en Polvo</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Acido 2 Etil Hexoico</p>
-                    <div class="box"></div>
-                </div>
-                <div class="item">
-                    <p>Metal Cobalto en Polvo</p>
-                    <div class="box"></div>
-                </div>
-                <div class="item">
-                    <p>Tierra Filtratadicamex 4170</p>
+                    <h2>Tierra Filtratadicamex 4170</h2>
                     <div class="box"></div>
                 </div>
             </div>
         </section>
         <section class="section">
+            <div class="tituloComparativa">
+                <h1>Lote: </h1>
+                <input type="text" class="box">
+                <button><img src="../assets/lupa.png" alt="" onclick="buscar()">
+                </button>
+            </div>
             <div class="container_grafica">
                 <!-- <h1>Grafica del proceso</h1> -->
                 <img src="../assets/Imagen 7.png" class="grafica">
@@ -90,47 +106,47 @@
             <div class="container_info">
                 <!-- <h1>Informacion</h1> -->
                 <div class="item">
-                    <p>Responsable</p>
+                    <h2>Responsable</h2>
+                    <div class="box"></div>
+                <!-- </div>
+                <div class="item">
+                    <h2>Lote</h2>
+                    <div class="box"></div>
+                </div> -->
+                <div class="item">
+                    <h2>Cantidad</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Lote</p>
+                    <h2>Rendimiento</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Cantidad</p>
+                    <h2>Varsol</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Rendimiento</p>
+                    <h2>Alkonat</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Varsol</p>
+                    <h2>Proquat BC-50</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Alkonat</p>
+                    <h2>Acido propinico</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Proquat BC-50</p>
+                    <h2>Acido 2 Etil Hexoico</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Acido propinico</p>
+                    <h2>Metal Cobalto en Polvo</h2>
                     <div class="box"></div>
                 </div>
                 <div class="item">
-                    <p>Acido 2 Etil Hexoico</p>
-                    <div class="box"></div>
-                </div>
-                <div class="item">
-                    <p>Metal Cobalto en Polvo</p>
-                    <div class="box"></div>
-                </div>
-                <div class="item">
-                    <p>Tierra Filtratadicamex 4170</p>
+                    <h2>Tierra Filtratadicamex 4170</h2>
                     <div class="box"></div>
                 </div>
             </div>
@@ -144,6 +160,11 @@
             <a href="/">Centro de ayuda</a>
         </div>
     </footer>
+
+    <script>function buscar(){
+        console.log("Buscando lote")
+    }
+    </script>
 </body>
 
 </html>

@@ -1,13 +1,107 @@
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
-  background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+  /* background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ; */
   /* background: url(../assets/pattern.png),
   radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31);
   background-blend-mode: screen; */
+  background: linear-gradient(90deg, #1e143a 0%, #16134e 15%, #16134e 85%, #1e143a 100%);
  }
+
  *{
     box-sizing: border-box;
+  }
+
+  .header {
+    width: 100%;
+    /* margin: 0 0 2.5px 0; */
+    /* padding: 1px 10px 5.8px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    border-bottom: solid #ffffff;
+    border-top: solid #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: linear-gradient(90deg, #282435 0%, #2f2e44 15%, #2f2e44 85%, #282435 100%);
+  }
+      
+  .header_img {
+    width: 40px;
+    /* height: 68.2px; */
+    margin: 0 0 0 2%;    
+    /* object-fit:contain; */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  } 
+  
+  .navegar{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navegar a{
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 0 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+      
+  .header__menu {
+    width: 50px;
+    margin: 0 2% 0 0;
+  }
+      
+  .header__menu ul {
+    display: none;
+    list-style: none;
+    margin: -6px 0px 0px -23px;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+  }
+      
+  .header__menu:hover ul, ul:hover {
+    display: block;
+  }
+      
+  .header__menu li {
+    margin: 1px 0px;
+  }
+      
+  .header__menu li a {
+    color: white;
+    text-decoration: none;
+  }
+      
+  .header__menu li a:hover {
+    text-decoration: underline;
+  }
+       
+  .header__menu--profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+  }
+      
+  .header__menu--profile img {
+    /* margin-top: 11px; */
+    /* margin-right: -55px; */
+    width: 40px; 
+  }
+      
+  .header__menu--profile p {
+    /* margin: -18px 30px 30px 10px; */
+    /* padding: 0px 0px 0px 0px; */
+    color: white;
+    text-decoration: none;
+    margin: 0;
   }
 
 .main{
@@ -15,7 +109,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5%;
+  margin: 2%;
 } 
 
 .semicirculo{
@@ -73,6 +167,7 @@ img.Producciones-Quimicas-logo {
   font-size: 16px;   
   outline: none;
   text-align: center;
+  font-weight: bold;
 }
 
 .input:focus{
@@ -91,8 +186,8 @@ img.Producciones-Quimicas-logo {
   height: 40px;
   margin: 30px 62.5px 34.5px;
   border-radius: 25px;
-  border: solid 3.5px rgb(138, 134, 134);
-  background-image: linear-gradient(98deg, #7e0505 9%, #410606 93%);
+  /* border: solid 3.5px rgb(138, 134, 134); */
+  background-image: radial-gradient( #7e0505 9%, #410606 93%);
   font-family: SitkaSmall;
   font-size: 20px;
   color: white;
@@ -103,9 +198,9 @@ img.Producciones-Quimicas-logo {
   cursor: pointer;
 }
 
-.boton:hover{
+/* .boton:hover{
   border: solid 4px rgb(177, 176, 176);
-}
+} */
 
 .container_link{
   margin-top:25px;
@@ -121,4 +216,39 @@ img.Producciones-Quimicas-logo {
   font-size: 15px;
   color: white;
   text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%
+  /* height: 100px; */
+  /* width: 100%; */
+}
+
+.container_footer{
+  /* width: 70%; */
+  height: 30px;
+  margin: 0 5%;
+  /* padding: 10px 18.5px 10px 19px; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.footer a {
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  /* padding-left: 30px; */
+  margin: 0 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

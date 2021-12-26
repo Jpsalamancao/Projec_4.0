@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
-  background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ;
+  /* background:radial-gradient(closest-side, #3f051d, #332e2e,#0e0c31) ; */
+  background: linear-gradient(90deg, #1e143a 0%, #16134e 15%, #16134e 85%, #1e143a 100%);
 
 }*{
   box-sizing: border-box;
@@ -9,30 +10,47 @@ body {
 
 .header {
   width: 100%;
-  margin: 0 0 2.5px 0;
-  padding: 1px 10px 5.8px;
+  /* margin: 0 0 2.5px 0; */
+  /* padding: 1px 10px 5.8px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 0px;  
+  top: 0px;
+  border-bottom: solid #ffffff;
+  border-top: solid #ffffff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background: linear-gradient(90deg, #282435 0%, #2f2e44 15%, #2f2e44 85%, #282435 100%);
 }
-
+    
 .header_img {
-  width: 50px;
-  height: 68.2px;
+  width: 40px;
+  /* height: 68.2px; */
   margin: 0 0 0 2%;    
   /* object-fit:contain; */
   align-items: center;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 } 
 
+.navegar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navegar a{
+  color: whitesmoke;
+  font-weight: bold;
+  margin: 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+    
 .header__menu {
   width: 50px;
   margin: 0 2% 0 0;
 }
-
+    
 .header__menu ul {
   display: none;
   list-style: none;
@@ -42,41 +60,51 @@ body {
   width: 100px;
   text-align: right;
 }
-
+    
 .header__menu:hover ul, ul:hover {
   display: block;
 }
-
+    
 .header__menu li {
   margin: 1px 0px;
 }
-
+    
 .header__menu li a {
   color: white;
   text-decoration: none;
 }
-
+    
 .header__menu li a:hover {
   text-decoration: underline;
 }
- 
+     
 .header__menu--profile {
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  flex-direction: column;
 }
-
+    
 .header__menu--profile img {
-  margin-top: 11px;
-  margin-right: -55px;
-  width: 50px; 
+  /* margin-top: 11px; */
+  /* margin-right: -55px; */
+  width: 40px; 
 }
-
+    
 .header__menu--profile p {
-  margin: -18px 0 30px 10px;
-  padding: 0px 0px 0px 0px;
+  /* margin: -18px 30px 30px 10px; */
+  /* padding: 0px 0px 0px 0px; */
   color: white;
   text-decoration: none;
+  margin: 0;
+}
+
+.containerInput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5% 0 0 0;
 }
 
 .input{
