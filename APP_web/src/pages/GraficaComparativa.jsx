@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@components/Header';
-import Columnas from '@components/Columns';
 import Multi_lineal from '@components/Multi_lineal';
+import Container_info from '../components/Container_info';
 
 
 const GraficaComparativa = () => {
@@ -11,6 +11,7 @@ const GraficaComparativa = () => {
 			<div>
 				<h1> GRAFICAS COMPARATIVAS</h1>
 			    <Multi_lineal/> 
+				<Container_info/>
 			</div>
 		</>
 	);
