@@ -2,17 +2,33 @@ import React, {useRef} from "react";
 import '@styles/Login.scss';
 import logo from '@Logos/UD.png'
 
+const dataDefault = {
+    username: 'KrlozMedina',
+    password: 'abc1234'
+}
+
+localStorage.setItem('Data', JSON.stringify(dataDefault));
+
 const Login = () => {
 	const form = useRef(null);
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
+		// event.preventDefault();
 		const formData = new FormData(form.current);
 		const data = {
 			username: formData.get('email'),
 			password: formData.get('password')
 		}
-		console.log(data);
+
+        localStorage.setItem('Data1', JSON.stringify(data));
+
+        if (data.username === dataDefault.username && data.password === dataDefault.password){
+            alert('OK');
+        } else {
+            alert('NO es posible ingresar... estamos trabajando en ello, asi que entra sin problemas');
+        }
+
+		// console.log(data);
     }
 
     return (
@@ -26,7 +42,7 @@ const Login = () => {
                     alt="logo"/>
                 </div>
 
-                <form action="/" className= "form" ref={form}>
+                <form action="/Home" className= "form" ref={form}>
                     <div className="container_data">
                         <p>Usuario</p>
                         <input type="text" name="email"
@@ -37,7 +53,7 @@ const Login = () => {
                         className="input" placeholder="********"/>
                     </div>
 
-                    <button className="boton" href="/Home" onClick ={handleSubmit}>
+                    <button className="boton" onClick ={handleSubmit}>
                         Ingresar               
                     </button>
                 </form>
