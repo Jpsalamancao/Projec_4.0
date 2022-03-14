@@ -11,7 +11,7 @@
     box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
     0 10px 10px rgba(255,255,255, 0.20);
     position: relative;
-    
+    background-color: #373435;
   }
 
   .Puesto{
@@ -39,16 +39,16 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-
+    
   }
   .Con_Lote {
     box-sizing: border-box;
     width: 52%;
     height: 12%;
     margin-left: 56px;
-    background: rgb(150, 145, 158);
-    border: 1px solid rgb(111, 106, 117);
-    border-radius: 12%;
+    // background: rgb(150, 145, 158);
+    // border: 1px solid rgb(111, 106, 117);
+    // border-radius: 12%;
     color: rgb(18, 2, 48);
   }
   .container_performance p{
@@ -61,8 +61,8 @@
     width: 52%;
     height: 12%;
     margin-left: 10px;
-    background: rgb(150, 145, 158);
-    border: 1px solid rgb(111, 106, 117);
-    border-radius: 12%;
+    // background: rgb(150, 145, 158);
+    // border: 1px solid rgb(111, 106, 117);
+    // border-radius: 12%;
     color: rgb(18, 2, 48);
   }

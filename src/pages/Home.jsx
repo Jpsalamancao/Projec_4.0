@@ -3,18 +3,12 @@ import Header from '@components/Header';
 import Graficas_home from '@containers/Graficas_home';
 import Comp_Rendimiento from '../containers/Comp_Rendimientos';
 
-
-
 const Home = () => {
-
-
-
 	return (
 		<>
-			<Header />
+			<Header/>
 			<Graficas_home/>
 			<Comp_Rendimiento/>
-
 		</>
 	);
 }

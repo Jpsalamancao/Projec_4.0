@@ -27,8 +27,6 @@ const Login = () => {
         } else {
             alert('NO es posible ingresar... estamos trabajando en ello, asi que entra sin problemas');
         }
-
-		// console.log(data);
     }
 
     return (

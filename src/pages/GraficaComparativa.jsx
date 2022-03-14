@@ -12,8 +12,8 @@ const GraficaComparativa = () => {
 		    <Header />
 			<h1> GRAFICAS COMPARATIVAS</h1>		
 			<div className="Contenedor_GraficaComparativa_info">
-			<Container_compare/>
-			<Container_compare/>
+				<Container_compare/>
+				<Container_compare/>
 			</div>
 
 		</>

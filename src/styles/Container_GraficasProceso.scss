@@ -7,27 +7,28 @@
   }
 
 
-  .tituloComparativa{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-  }
-  .tituloComparativa input{
-    margin: 0 10px 0 10px;
-    width: 70%;
-    height: 30px;
-    padding: 0 0 0 0;
-    margin-top: 1%;
-    background-color: rgba(255,255,255,0.1);
-    border: 1px solid white;
-    border-radius: 25px;
-    color: white;
-    font-family: 'Muli', sans-serif;
-    font-size: 16px;   
-    outline: none;
-    text-align: center;
-  }
+  // .tituloComparativa{
+  //   display: flex;
+  //   justify-content: center;
+  //   justify-items: center;
+  //   align-items: center;
+  // }
+
+  // .tituloComparativa input{
+  //   margin: 0 10px 0 10px;
+  //   width: 70%;
+  //   height: 30px;
+  //   padding: 0 0 0 0;
+  //   margin-top: 1%;
+  //   background-color: rgba(255,255,255,0.1);
+  //   border: 1px solid white;
+  //   border-radius: 25px;
+  //   color: white;
+  //   font-family: 'Muli', sans-serif;
+  //   font-size: 16px;   
+  //   outline: none;
+  //   text-align: center;
+  // }
   
   .tituloComparativa button{
     cursor: pointer;
@@ -57,33 +58,33 @@
       margin: 0px, 0px, 10px, 0px ;
     }
   
-  .item{
-      display: flex;
-      margin-top: 2.5%;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
+  // .item{
+  //     display: flex;
+  //     margin-top: 2.5%;
+  //     flex-direction: row;
+  //     flex-wrap: wrap;
+  //   }
     
-    .item h2{
-      font-family: SitkaSmall;
-      font-size: 15px;
-      width: 180px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: white;
-      margin: 0 0 1.5px 0;
-    }
+    // .item h2{
+    //   font-family: SitkaSmall;
+    //   font-size: 15px;
+    //   width: 180px;
+    //   font-weight: normal;
+    //   font-stretch: normal;
+    //   font-style: normal;
+    //   line-height: normal;
+    //   letter-spacing: normal;
+    //   text-align: left;
+    //   color: white;
+    //   margin: 0 0 1.5px 0;
+    // }
   
-    .item div{
-      width: 150px;
-      height: 18px;
-      margin-bottom: 1px;
-      border-radius: 2.5px;
-      border: solid 0.5px #707070;
-      background-color: var(--ffffff);
-      color: white;
-    }
+    // .item div{
+    //   width: 150px;
+    //   height: 18px;
+    //   margin-bottom: 1px;
+    //   border-radius: 2.5px;
+    //   border: solid 0.5px #707070;
+    //   background-color: var(--ffffff);
+    //   color: white;
+    // }

@@ -8,10 +8,10 @@ const Columns = () => {
         'maquina 4','maquina 5', ],
         datasets:[{
             label:'Rendimiento',
-            backgroundColor:'rgba(91, 192, 222 ,1)',
+            backgroundColor:'rgba(140, 25, 25 ,1)',
             borderColor:'black',
             borderWidth:1,
-            hoverBackgroundColor: 'rgba(0,255,0,0.2)',
+            hoverBackgroundColor: 'rgba(140, 25, 25, 0.5)',
             hoverBorderColor: '#fff05',
             data: [50, 10, 30, 45, 100]
         }]

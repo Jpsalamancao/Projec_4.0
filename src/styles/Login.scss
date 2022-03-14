@@ -35,7 +35,7 @@
 .semicirculo{
   width: 120px; 
   height: 72px; 
-  background-color: rgba(13, 11, 41, 0.3);
+  background-color: rgb(55, 52, 53);
   border-radius: 100px 100px 0 0;
 }
 
@@ -43,12 +43,12 @@
   width: 300px;
   height: 400px;
   padding: 0 25px 0 25px;
-  border: solid 2.5px #696e7d;
+  border: solid 2.5px rgba(126, 5, 5, 0.20);
   border-top: transparent;
-  background-color: rgba(13, 11, 41, 0.3);
+  background-color: rgb(55, 52, 53);
   border-radius: 18px;
-  box-shadow: -10px 10px 10px rgba(255,255,255,0.13), 
-  10px 10px 10px rgba(255,255,255, 0.20);
+  box-shadow: -10px 10px 10px rgba(55, 52, 53, 0.20), 
+  10px 10px 10px rgba(55, 52, 53, 0.20);
 }
   
   .container_logo{
@@ -81,7 +81,7 @@
     padding: 0px 10px;
     margin-top: 5px;
     /*margin-right: 5%;*/
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgb(140, 25, 25);
     border: solid 0;
     border-radius: 25px;
     color: white;
@@ -91,7 +91,7 @@
     text-align: center;
   }
     ::placeholder {
-      color: rgba(255, 255, 255, 0.404);
+      color: rgba(255, 255, 255, 0.4);
     }
   
   .input:focus{
@@ -110,8 +110,9 @@
     height: 40px;
     margin: 30px 62.5px 34.5px;
     border-radius: 25px;
-    border: solid 3.5px rgb(138, 134, 134);
-    background-image: linear-gradient(98deg, #7e0505 9%, #410606 93%);
+    border: solid 1.5px rgb(201, 195, 195);
+    // background-image: linear-gradient(98deg, #7e0505 9%, #410606 93%);
+    background-color: rgb(140, 25, 25);
     font-family: SitkaSmall;
     font-size: 20px;
     color: white;

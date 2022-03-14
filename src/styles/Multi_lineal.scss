@@ -1,25 +1,26 @@
 .MultiAxisChartjs{
     margin: 0;
+    margin-bottom: 30px;
     padding: 0;
     width: 500px;
-    height: 300px;
+    // height: 300px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 .MultiAxisChartjs canvas {
     padding: 0;
-    margin-top: 30px;
-    margin-left: 10px;
+    margin: 0, 10px, 0, 10px;
     width: 500px;
     height: 300px;
 }
 .header {
     color: white;
-   
+    height: 50px;
 }
 
 .Grafica_proceso {
     font-family: Arial;
     font-size: 1em;
+    height: 50px;
 }
