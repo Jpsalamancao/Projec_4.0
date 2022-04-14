@@ -1,4 +1,4 @@
 .vscode
 .DS_Store
-API/node_modules
-HTTP/node_modules
+node_modules
+Prueba
