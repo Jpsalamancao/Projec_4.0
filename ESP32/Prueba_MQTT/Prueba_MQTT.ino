@@ -7,8 +7,8 @@ PubSubClient mqttClient(esp32Client);
 const char* ssid     = "Krloz Medina";
 const char* password = "F@mili@571112";
 
-char *server = "192.168.5.59";
-int port = 1883;
+char *server = "192.168.5.221";
+int port = 1234;
 
 int ledpin= 26;
 int fotopin=33;

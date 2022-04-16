@@ -1,22 +1,16 @@
 {
   "name": "mqtt-http",
   "version": "1.0.0",
-  "description": "Realizando la conexion entre servidores MQTT y HTTP",
-  "main": "src/index.js",
+  "description": "Web application for industry",
+  "main": "src/broker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mqtt": "nodemon src/broker.js",
-    "http": "nodemon src/index.js"
+    "broker": "nodemon src/broker.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jpsalamancao/Projec_4.0.git"
   },
-  "keywords": [
-    "MQTT",
-    "HTTP",
-    "Server"
-  ],
   "author": "KrlozMedina",
   "license": "MIT",
   "bugs": {
