@@ -113,7 +113,7 @@ void loop()
   Serial.println(fotoval);
 
   sprintf(datos, "Valor fotoresistencia: %d ", fotoval);
-  mqttClient.publish("Salida/01",datos);
+  mqttClient.publish("temperature",datos);
   delay(5000);
   
   

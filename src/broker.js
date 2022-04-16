@@ -1,5 +1,5 @@
 const mosca = require('mosca');
-const http = require('http');
+const http = require('https');
 const mqtt = require('mqtt');
 
 //Configuracion MQTT
@@ -11,11 +11,11 @@ const broker = new mosca.Server(settings)
 //Configuracion HTTP
 const hostHTTP = '192.168.5.59';
 const portHTTP = 3000;
-//Conexion a la API
+//Conexion a la API https://4trz3v4f7f.execute-api.us-east-1.amazonaws.com/productive/handlerdata/recordsprocess
 const options = {
-    hostname: '192.168.5.59',
-    port: 3008,
-    path: '/api/users',
+    hostname: '4trz3v4f7f.execute-api.us-east-1.amazonaws.com', //'192.168.5.59',
+    port: 443, //3008,
+    path: '/productive/handlerdata/recordsprocess', //'/api/users',
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -29,6 +29,7 @@ broker.on('ready', ()=>{
 
 broker.on('published', (packet)=>{
     message = packet.payload.toString();
+    console.clear();
     console.log('MQTT: Mensaje', message, ',topic', topic);
 })
 
@@ -49,8 +50,8 @@ server.listen(portHTTP, hostHTTP, () => {
         data = JSON.stringify(JSON.parse(message.toString()))
         
         req = http.request(options, res => {
-            console.log(`statusCode: ${res.statusCode}`)
-            
+            console.log(`\nStatus: ${res.statusCode} ${res.statusMessage}\n`)
+             
             res.on('data', d => {
                 process.stdout.write(d)
             })
@@ -62,6 +63,7 @@ server.listen(portHTTP, hostHTTP, () => {
         
         req.write(data)
         req.end()
+        return data;
     })
 
     client.on('connect', ()=>{

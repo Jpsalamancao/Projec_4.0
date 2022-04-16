@@ -1,7 +1,7 @@
 {
   "name": "mqtt-http",
   "version": "1.0.0",
-  "description": "Web application for industry",
+  "description": "Gateway entre protocolos MQTT y HTTP",
   "main": "src/broker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,22 @@
     "type": "git",
     "url": "git+https://github.com/Jpsalamancao/Projec_4.0.git"
   },
+  "keywords": [
+    "MQTT",
+    "HTTP"
+  ],
   "author": "KrlozMedina",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jpsalamancao/Projec_4.0/issues"
   },
   "homepage": "https://github.com/Jpsalamancao/Projec_4.0#readme",
-  "dependencies": {
-    "mosca": "^0.6.0",
-    "mqtt": "^4.3.7",
+  "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "celery-node": "^0.5.9",
+    "mosca": "^0.6.0",
+    "mqtt": "^4.3.7"
   }
 }
