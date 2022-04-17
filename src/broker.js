@@ -4,9 +4,13 @@ const mqtt = require('mqtt');
 
 //Configuracion MQTT
 const hostMQTT = 'mqtt://192.168.5.59:1883';
-const topic = 'temperature';
 const settings = {port: 1883}
-const broker = new mosca.Server(settings)
+
+topic1 = 'record';
+topic2 = 'add';
+topic3 = 'charger';
+topic4 = 'perform';
+topic5 = 'quality';
 
 //Configuracion HTTP
 const hostHTTP = '192.168.5.59';
@@ -22,16 +26,41 @@ const options = {
     }
 }
 
-// MQTT broker
-broker.on('ready', ()=>{
-    console.log('Broker funcionando en', hostMQTT);
-})
+console.clear()
+const broker = new mosca.Server(settings)
+
+const client = mqtt.connect(hostMQTT);
 
 broker.on('published', (packet)=>{
     message = packet.payload.toString();
+    topic = packet.topic.toString();
+
     console.clear();
-    console.log('MQTT: Mensaje', message, ',topic', topic);
+    console.log(`MQTT:Desde el topic '${topic}', se envia el mensaje\n${message}`);
+
+    switch(topic){
+        case topic1:
+            options.path = '/productive/handlerdata/recordsprocess';
+            break;
+        case topic2:
+            options.path = '/productive/handlerdata/addproducto';
+            break;
+        case topic3:
+            options.path = '/productive/handlerdata/chargerawmaterial';
+            break;
+        case topic4:
+            options.path = '/productive/handlerdata/performance';
+            break;
+        case topic5:
+            options.path = '/productive/handlerdata/qualityproduct';
+            break;
+        default:
+            console.log(`\n%c${'El topic es incorrecto'}`, `color:${'red'}`)
+    }
 })
+
+
+
 
 //HTTP server
 const server = http.createServer((req, res) => {
@@ -44,15 +73,14 @@ const server = http.createServer((req, res) => {
 server.listen(portHTTP, hostHTTP, () => {
     console.log('Servidor funcionando en', hostHTTP, portHTTP);
 
-    const client = mqtt.connect(hostMQTT);
-
     client.on('message', (topic, message) => {
         data = JSON.stringify(JSON.parse(message.toString()))
         
         req = http.request(options, res => {
-            console.log(`\nStatus: ${res.statusCode} ${res.statusMessage}\n`)
+            console.log(`\nHTTP: Status: ${res.statusCode} ${res.statusMessage}`)
              
             res.on('data', d => {
+                console.log(`\nAWS responde desde ${options.path}`)
                 process.stdout.write(d)
             })
         })
@@ -63,10 +91,13 @@ server.listen(portHTTP, hostHTTP, () => {
         
         req.write(data)
         req.end()
-        return data;
     })
 
     client.on('connect', ()=>{
-        client.subscribe(topic);
+        client.subscribe(topic1);
+        client.subscribe(topic2);
+        client.subscribe(topic3);
+        client.subscribe(topic4);
+        client.subscribe(topic5);
     })
 })
