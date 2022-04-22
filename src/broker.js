@@ -16,7 +16,7 @@ topic5 = 'quality';
 const hostHTTP = '192.168.5.59';
 const portHTTP = 3000;
 //Conexion a la API https://4trz3v4f7f.execute-api.us-east-1.amazonaws.com/productive/handlerdata/recordsprocess
-const options = {
+const optionsHTTP = {
     hostname: '4trz3v4f7f.execute-api.us-east-1.amazonaws.com', //'192.168.5.59',
     port: 443, //3008,
     path: '/productive/handlerdata/recordsprocess', //'/api/users',
@@ -40,27 +40,24 @@ broker.on('published', (packet)=>{
 
     switch(topic){
         case topic1:
-            options.path = '/productive/handlerdata/recordsprocess';
+            optionsHTTP.path = '/productive/handlerdata/recordsprocess';
             break;
         case topic2:
-            options.path = '/productive/handlerdata/addproducto';
+            optionsHTTP.path = '/productive/handlerdata/addproducto';
             break;
         case topic3:
-            options.path = '/productive/handlerdata/chargerawmaterial';
+            optionsHTTP.path = '/productive/handlerdata/chargerawmaterial';
             break;
         case topic4:
-            options.path = '/productive/handlerdata/performance';
+            optionsHTTP.path = '/productive/handlerdata/performance';
             break;
         case topic5:
-            options.path = '/productive/handlerdata/qualityproduct';
+            optionsHTTP.path = '/productive/handlerdata/qualityproduct';
             break;
         default:
             console.log(`\n%c${'El topic es incorrecto'}`, `color:${'red'}`)
     }
 })
-
-
-
 
 //HTTP server
 const server = http.createServer((req, res) => {
@@ -74,13 +71,15 @@ server.listen(portHTTP, hostHTTP, () => {
     console.log('Servidor funcionando en', hostHTTP, portHTTP);
 
     client.on('message', (topic, message) => {
-        data = JSON.stringify(JSON.parse(message.toString()))
+        data = JSON.parse(message);
+        data.topic = topic;
+        // console.log(data)
         
-        req = http.request(options, res => {
+        req = http.request(optionsHTTP, res => {
             console.log(`\nHTTP: Status: ${res.statusCode} ${res.statusMessage}`)
              
             res.on('data', d => {
-                console.log(`\nAWS responde desde ${options.path}`)
+                console.log(`\nAWS responde desde ${optionsHTTP.path}`)
                 process.stdout.write(d)
             })
         })
@@ -89,7 +88,7 @@ server.listen(portHTTP, hostHTTP, () => {
         console.error(error)
         })
         
-        req.write(data)
+        req.write(JSON.stringify(data))
         req.end()
     })
 

@@ -1,6 +1,6 @@
 {
-  "name": "mqtt-http",
-  "version": "1.0.0",
+  "name": "gateway",
+  "version": "1.1.0",
   "description": "Gateway entre protocolos MQTT y HTTP",
   "main": "src/broker.js",
   "scripts": {
@@ -25,7 +25,6 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "celery-node": "^0.5.9",
     "mosca": "^0.6.0",
     "mqtt": "^4.3.7"
   }
