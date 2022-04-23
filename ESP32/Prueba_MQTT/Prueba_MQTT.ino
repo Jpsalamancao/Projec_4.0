@@ -1,25 +1,34 @@
+#include <Arduino.h>
 #include <ArduinoJson.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
+#include <time.h>
  
 const char* ssid = "Krloz Medina";
 const char* password =  "F@mili@571112";
 const char* mqttServer = "192.168.5.221";
+const char* ntpServer = "co.pool.ntp.org";
 const int mqttPort = 1234;
+
+const long  gmtOffset_sec = -21600;
+const int   daylightOffset_sec = 3600;
 
 int dato = 1;
 char* topic;
 int success = 0;
 int error = 0;
+char fecha[50];
+struct tm timeinfo;
  
 WiFiClient espClient;
 PubSubClient client(espClient);
  
 void setup() {
- 
+  //Configuracion puerto serial
   Serial.begin(115200);
   Serial.println();
  
+  //Configuracion WIFI
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
@@ -29,6 +38,7 @@ void setup() {
  
   Serial.println("Connected to the WiFi network");
  
+  //Configuracion servidor MQTT
   client.setServer(mqttServer, mqttPort);
  
   while (!client.connected()) {
@@ -42,57 +52,61 @@ void setup() {
       delay(2000);
     }
   }
- 
+
+  //Configuracion al servido NTP (Network Time Protocole)
+  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
 }
  
 void loop() {
-  client.connect("");
+  //NTP
+  if(!getLocalTime(&timeinfo)){
+    Serial.println("Failed to obtain time");
+    return;
+  }
 
+  strftime(fecha, 50, "%d-%B-%Y %H:%M:%S", &timeinfo);
+  
+  //JSON
   StaticJsonBuffer <300> JSONbuffer;
   JsonObject& JSONencoder = JSONbuffer.createObject();
 
   switch (dato) {
     case 1:
       JSONencoder["id"] = "l1";
-      // JSONencoder["topic"] = "record";
-      JSONencoder["temperatura"] = "26.2";
-      JSONencoder["time_proceso"] = "2022-23-23T16:11:07";
+      JSONencoder["temperatura"] = random(20, 120);
+      JSONencoder["time_proceso"] = fecha;  //"2022-23-23T16:11:07";
       JSONencoder["lote_proceso"] = "L1010";
       topic = "record";
       dato = 2;
       break;
     case 2:
       JSONencoder["id"] = "l1";
-      // JSONencoder["topic"] = "addProduct";
       JSONencoder["producto"] = "varsol";
       JSONencoder["lote_saldo"] = "L1102";
-      JSONencoder["cantidad"] = "25.2";
-      topic = "add";
+      JSONencoder["cantidad"] = random(0,30);
+      topic = "addProduct";
       dato = 3;
       break;
     case 3:
       JSONencoder["id"] = "l1";
-      // JSONencoder["topic"] = "charger";
       JSONencoder["materia_prima"] = "cobalto";
-      JSONencoder["cantidad"] = "18.6";
+      JSONencoder["cantidad"] = random(0,30);
       JSONencoder["lote_mp"] = "L1410";
       topic = "charger";
       dato = 4;
       break;
     case 4:
       JSONencoder["id"] = "l1";
-      // JSONencoder["topic"] = "perform";
-      JSONencoder["cantidad_producida"] = "16.3";
-      JSONencoder["cantidad_empacada"] = "16.1";
+      JSONencoder["cantidad_producida"] = random(0,20);
+      JSONencoder["cantidad_empacada"] = random(0,20);
       JSONencoder["rendimiento"] = "89.7";
       topic = "perform";
       dato = 5;
       break;
     case 5:
       JSONencoder["id"] = "l1";
-      // JSONencoder["topic"] = "quality";
       JSONencoder["nombre_muestra"] = "M4312";
-      JSONencoder["resultado_muestra"] = "59.2";
+      JSONencoder["resultado_muestra"] = random(0, 100);
       dato = 1;
       topic = "quality";
       break;
@@ -102,6 +116,9 @@ void loop() {
   JSONencoder.printTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
   Serial.println("Sending message to MQTT topic..");
   Serial.println(JSONmessageBuffer);
+
+  //MQTT
+  client.connect("");
  
   if (client.publish(topic, JSONmessageBuffer) == true) {
     Serial.println("Success sending message.");
