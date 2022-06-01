@@ -9,7 +9,7 @@ const dataDefault = {
 
 localStorage.setItem('Data', JSON.stringify(dataDefault));
 
-const Login = () => {
+const CreateUser = () => {
 	const form = useRef(null);
 
 	const handleSubmit = (event) => {
@@ -22,11 +22,7 @@ const Login = () => {
 
         localStorage.setItem('Data1', JSON.stringify(data));
 
-        if (data.username === dataDefault.username && data.password === dataDefault.password){
-            alert('OK');
-        } else {
-            alert('NO es posible ingresar... estamos trabajando en ello, asi que entra sin problemas');
-        }
+        console.log(data)
     }
 
     return (
@@ -40,7 +36,7 @@ const Login = () => {
                     alt="logo"/>
                 </div>
 
-                <form action="/Home" className= "form" ref={form}>
+                <form action="" className= "form" ref={form}>
                     <div className="container_data">
                         <p>Usuario</p>
                         <input type="text" name="email"
@@ -52,17 +48,12 @@ const Login = () => {
                     </div>
 
                     <button className="boton" onClick ={handleSubmit}>
-                        Ingresar               
+                        Registrar
                     </button>
                 </form>
-
-                <div className="container_link">
-                    <p><a href="/Home">¿Olvido la contraseña?</a></p>
-                    <p><a href="/CreateUser">Crear usuario</a></p>
-                </div>
             </div>
         </div>
     );
 }
 
-export default Login;
+export default CreateUser;
