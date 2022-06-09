@@ -27,11 +27,11 @@ const optionsHTTP = {
 }
 
 console.clear()
-const broker = new mosca.Server(settings)
+const serverMQTT = new mosca.Server(settings)
 
 const client = mqtt.connect(hostMQTT);
 
-broker.on('published', (packet)=>{
+serverMQTT.on('published', (packet)=>{
     message = packet.payload.toString();
     topic = packet.topic.toString();
 
@@ -60,7 +60,7 @@ broker.on('published', (packet)=>{
 })
 
 //HTTP server
-const server = http.createServer((req, res) => {
+const serverHTTP = http.createServer((req, res) => {
     // console.log('Se ha accedido desde el navegador');
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
