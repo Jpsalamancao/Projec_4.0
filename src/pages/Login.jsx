@@ -30,38 +30,28 @@ const Login = () => {
     }
 
     return (
-        <div className="container_PQ">
-            <div className="semicirculo"></div>
+        <div className='user-data--container'>
+        <section className="logo--container">
+            <img src={logo} alt='Logo UD'  />
+        </section>
 
-            <div className="container">
-                <div className="container_logo">
-                    <img src={logo}
-                    className="UniversidadDistritalLogo"
-                    alt="logo"/>
-                </div>
+        <section className="data-container">
+            <form action="submit" className="user-info" ref={form}>
+                <p>Usuario</p>
+                <input type="text" name="user" placeholder="user@email" />
+                <p>Contraseña</p>
+                <input type="password" name="password" placeholder="********" />
+                <button type="submit" onClick={handleSubmit}>
+                    Ingresar
+                </button>
+            </form>
 
-                <form action="/Home" className= "form" ref={form}>
-                    <div className="container_data">
-                        <p>Usuario</p>
-                        <input type="text" name="email"
-                        className="input" placeholder="user@email"/>
-
-                        <p>Contraseña</p>
-                        <input type="password" name="password"
-                        className="input" placeholder="********"/>
-                    </div>
-
-                    <button className="boton" onClick ={handleSubmit}>
-                        Ingresar               
-                    </button>
-                </form>
-
-                <div className="container_link">
-                    <p><a href="/Home">¿Olvido la contraseña?</a></p>
-                    <p><a href="/CreateUser">Crear usuario</a></p>
-                </div>
+            <div className="user-create">
+                <a href=''>¿Olvido la contraseña?</a>
+                <a href=''>Crear usuario</a>
             </div>
-        </div>
+        </section>
+    </div>
     );
 }
 

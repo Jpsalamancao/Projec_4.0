@@ -1,145 +1,111 @@
+@import 'vars';
 
-.container_PQ {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 8%;
+.user-data--container{
+  width: 100%;
+  margin: 8% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-// .semicirculo{
-//     width: 120px; 
-//     height: 72px; 
-//     padding: 0 25px 0 25px;
-//     background-color: rgba(255,255,255,0.1);
-//     // background-blend-mode: luminosity;
-//     //background-color: rgba(13, 11, 41, 0.3);
-//     box-shadow: 0 1.5px 25px 0 var(--ffffff);
-//     border-radius: 100px 100px 0 0;
-//   }
-  
-//   .container {
-//       width: 300px;
-//       height: 462px;
-//       padding: 0 25px 0 25px;
-//       background-color: rgba(255,255,255,0.1);
-//       // box-shadow: 0 1.5px 25px 0 var(--ffffff);
-//       // border: solid 2.5px #696e7d;
-//       background-blend-mode: luminosity;
-//       border-radius: 18px;
-//       box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
-//       0 10px 10px rgba(255,255,255, 0.20);
-//      // position: relative;
-//   }
-
-.semicirculo{
-  width: 120px; 
-  height: 72px; 
-  background-color: rgb(55, 52, 53);
-  border-radius: 100px 100px 0 0;
+.logo--container{
+  width: 12rem;
+  height: 12rem;
+  background-color: $color-box-primary;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
-  width: 300px;
-  height: 400px;
-  padding: 0 25px 0 25px;
-  border: solid 2.5px rgba(126, 5, 5, 0.20);
+.logo--container img{
+  width: 7rem;
+  height: 9.4rem;
+  z-index: 1;
+}
+
+.data-container{
+  width: 30rem;
+  height: 40rem;
+  padding: 0 25px;
+  margin-top: 6rem;
+  position: relative;
+  border: solid 2.5px $color-line-secundary;
   border-top: transparent;
-  background-color: rgb(55, 52, 53);
+  background-color: $color-box-primary;
   border-radius: 18px;
-  box-shadow: -10px 10px 10px rgba(55, 52, 53, 0.20), 
-  10px 10px 10px rgba(55, 52, 53, 0.20);
+  box-shadow: $shadow-box
 }
-  
-  .container_logo{
-    text-align: center;
-    margin-top: -50px;
-  }
-  
-  img.UniversidadDistritalLogo {
-    width: 70px;
-    height: 94px;
-    // margin: -5px 0 0 0; 
-  }
-  
-  .container_data{
-   margin-top: 35px;
-   margin-bottom: 5px;
-  }
-  
-  .container_data p {
-    margin: 10px 44px 0 44.5px;
-    font-family: SitkaSmall;
-    font-size: 25px;
-    text-align: center;
-    color:#ffffff;
-  }
-  
-  .input{
-    width: 250px;
-    height: 35px;
-    padding: 0px 10px;
-    margin-top: 5px;
-    /*margin-right: 5%;*/
-    background-color: rgb(140, 25, 25);
-    border: solid 0;
-    border-radius: 25px;
-    color: white;
-    font-family: 'Muli', sans-serif;
-    font-size: 16px;   
-    outline: none;
-    text-align: center;
-  }
-    ::placeholder {
-      color: rgba(255, 255, 255, 0.4);
-    }
-  
-  .input:focus{
-    box-shadow: 0 1px 6px 0 rgb(138, 134, 134);
-    border-color: rgb(216, 213, 213);
-  }
-  
-  .input:hover{
-    box-shadow: 0 1px 6px 0 rgb(177, 176, 176);
-    border-color: white;
-  }
-  
-  .boton {
-    display: flex;
-    width: 125px;
-    height: 40px;
-    margin: 30px 62.5px 34.5px;
-    border-radius: 25px;
-    border: solid 1.5px rgb(201, 195, 195);
-    // background-image: linear-gradient(98deg, #7e0505 9%, #410606 93%);
-    background-color: rgb(140, 25, 25);
-    font-family: SitkaSmall;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 0.3s;
-    cursor: pointer;
-  }
-  
-  .boton:hover{
-    border: solid 4px rgb(177, 176, 176);
-  }
-  
-  .container_link{
-    /* justify-content: end; */
-    margin-top:25px;
-  }
-  
-  .container_link p{
-    margin: 0 0 5px 0;
-    text-align: right;
-  }
-  
-  .container_link a{
-    font-family: SitkaSmall;
-    font-size: 15px;
-    color: white;
-    text-decoration: none;
-  }
+
+.user-info{
+  width: 100%;
+  margin-top: 8rem;
+  font-size: 2.5rem;
+  color: $color-text;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.user-info input{
+  width: 25rem;
+  height: 3.5rem;
+  padding: 0 10px;
+  background-color: $color-box-secundary;
+  border: 0;
+  border-radius: 25px;
+  color: $color-text;
+  font-family: $font-input;
+  font-size: 1.6rem;
+  outline: none;
+  text-align: center;
+}
+.user-info input::placeholder{
+  color: $color-placehold;
+}
+.user-info input:focus{
+  box-shadow: $shadow-focus;
+  border-color: $color-line-focus;
+}
+.user-info input:hover{
+  box-shadow: $shadow-hover;
+  border-color: $color-line-hover;
+}
+
+.user-info button{
+  width: 12.5rem;
+  height: 4rem;
+  margin: 2rem auto;
+  border-radius: 25px;
+  border: solid 1.5px $color-line-primary;
+  background-color: $color-box-secundary;
+  font-family: $font-text;
+  font-size: 2rem;
+  color: $color-text;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.user-info button:hover{
+  border: solid 4px $color-line-hover;
+}
+
+.user-create{
+  text-align: right;
+}
+
+.user-create a{
+  color: white;
+  font-family: $font-text;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: block;
+  margin: 0.5rem 0;
+}
