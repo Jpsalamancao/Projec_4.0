@@ -1,45 +1,43 @@
 import React from "react";
-
+import '../styles/ID_lote_home.scss'
 
 
 const Container_info_compare = () => {
     return (
-        <div className="Container_info">
-            <div className="item">
-                <h2>Responsable</h2>
+        <section className="performance-card">
+            <span className="item">
+                <p>Responsable</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Lote</h2>
+            </span>
+            <span className="item">
+                <p>Lote</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Contenido metalico primer ajuste</h2>
+            </span>
+            <span className="item">
+                <p>Contenido metalico primer ajuste</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Acides</h2>
+            </span>
+            <span className="item">
+                <p>Acides</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Contenido metalico final</h2>
+            </span>
+            <span className="item">
+                <p>Contenido metalico final</p>
                 <div className="box"></div>
-            </div>
-
-            <div className="item">
-                <h2>Cantidad</h2>
+            </span>
+            <span className="item">
+                <p>Cantidad</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Rendimiento</h2>
+            </span>
+            <span className="item">
+                <p>Rendimiento</p>
                 <div className="box"></div>
-            </div>
-            <div className="item">
-                <h2>Tiempo de porceso</h2>
+            </span>
+            <span className="item">
+                <p>Tiempo de porceso</p>
                 <div className="box"></div>
-            </div>
-
-        </div>
+            </span>
+        </section>
     );
 
 }

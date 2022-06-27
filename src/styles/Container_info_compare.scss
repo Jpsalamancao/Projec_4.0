@@ -1,107 +1,42 @@
+@import 'vars';
 
-// estilo para la informacion de las pagina de graficas comparativas
-
-
-.Contenedor_GraficaComparativa{
-  width: 50%;
+.compare-info-container{
+  width: calc(100% - 2rem);
+  max-width: 100rem;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: rgb(246, 246, 244);
 }
 
-// .containerInput{
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 1.5% 0 0 0;
-// }
-//////////@at-root
-.tituloComparativa{
+.compare-info--search{
+  width: max-content;
+  margin: 0 auto;
   display: flex;
-  justify-items: center;
+  // justify-items: center;
   align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.input_comparativo{
-  margin: 0 10px 0 10px;
-  width: 300px;
-  height: 30px;
-  padding: 0 0 0 0;
-  margin-top: 1%;
-  background-color: rgba(55,52,53,0.9);
-  border: 1px solid black;
+.compare-info--search input{
+  width: 25rem;
+  height: 3rem;
+  background-color: $color-box-primary;
+  border: 1px solid $color-line-box;
   border-radius: 25px;
-  color: white;
-  font-family: 'Muli', sans-serif;
-  font-size: 16px;   
-  outline: none;
+  color: $color-text;
+  font-size: 1.6rem;
   text-align: center;
 }
 
-// .tituloComparativa button{
-//   cursor: pointer;
-//   border: none;
-//   background: none;
-// }
-
-// .tituloComparativa button img{
-//   width: 20px;
-//   border: none;
-// }
-
-
-
-.img_compare{
-  width: 20px;
+.compare-info--search button{
+  width: 2.5rem;
+  height: 2.5rem;
   border: none;
-  // filter: brightness(1.1);
-  // mix-blend-mode: multiply;
+  background-image: url('../assets/icons/lupa.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $color-background;
+  cursor: pointer;
 }
-
-// /////////////
-.Container_info{
-    // width: 380px;
-    // height: auto;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 0px, 0px, 10px, 0px ;
-    background-color: rgb(55, 52, 53);
-    border-radius: 10px;
-  }
-
-.item{
-    display: flex;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .item h2{
-    font-family: SitkaSmall;
-    font-size: 15px;
-    width: 200px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: white;
-    margin: 0 0 1.5px 10px;
-  }
-
-  .box{
-    width: 150px;
-    height: 22px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: solid 0.5px #707070;
-    background-color: var(--ffffff);
-    color: white;
-  }

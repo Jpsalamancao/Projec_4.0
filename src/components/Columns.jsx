@@ -17,16 +17,13 @@ const Columns = () => {
         }]
     };
     const opciones={
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         responsive: true
     }
 
-
     return(
-        <div className="Columns">
-            <div className="Titel_Columns">
-                <h1>GRAFICA COMPARATIVA</h1>
-            </div>
+        <div className="graphic-columns-container">
+            <h1>GRAFICA COMPARATIVA</h1>
             <Bar data={data} options={opciones}/>
         </div>
     );

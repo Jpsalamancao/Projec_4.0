@@ -59,18 +59,13 @@ const data = {
 
   };
 
-
 const Multi_lineal = () => {
-
-    return (
-        <div className='MultiAxisChartjs'>
-            <div className='header'>
-               <h1 className='Grafica_proceso'>GRÁFICA DE PROCESO </h1>
-            </div>
-            <Line data={data} options={options} />
-      </div>
-
-    );
+  return (
+    <div className='graphic-multiLinea-container'>
+        <h1>GRÁFICA DE PROCESO </h1>
+        <Line data={data} options={options} />
+    </div>
+  );
 }
 
 export default Multi_lineal;

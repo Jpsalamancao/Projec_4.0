@@ -1,0 +1,15 @@
+@import 'vars';
+
+.process-info-container{
+    width: 100%;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+}
+
+.process-info-container h1{
+    font-size: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+}

@@ -1,58 +1,45 @@
 import React, {useRef} from "react";
 import '@styles/Login.scss';
-import logo from '@Logos/UD.png'
-
-const dataDefault = {
-    username: 'KrlozMedina',
-    password: 'abc1234'
-}
-
-localStorage.setItem('Data', JSON.stringify(dataDefault));
+import logo from '@Logos/UD.png';
 
 const CreateUser = () => {
 	const form = useRef(null);
 
 	const handleSubmit = (event) => {
-		// event.preventDefault();
-		const formData = new FormData(form.current);
-		const data = {
-			username: formData.get('email'),
-			password: formData.get('password')
-		}
+        // event.preventDefault();
+        const formData = new FormData(form.current);
+        const data = {
+            username: formData.get('user'),
+            email: formData.get('email')
+        }
 
-        localStorage.setItem('Data1', JSON.stringify(data));
-
-        console.log(data)
     }
 
     return (
-        <div className="container_PQ">
-            <div className="semicirculo"></div>
+        <div className='user-data--container'>
+        <section className="logo--container">
+            <img src={logo} alt='Logo UD'  />
+        </section>
 
-            <div className="container">
-                <div className="container_logo">
-                    <img src={logo}
-                    className="UniversidadDistritalLogo"
-                    alt="logo"/>
-                </div>
+        <section className="data-container">
+            <form action={'/'} className="user-info" ref={form}>
+                <p>Email</p>
+                <input type="text" name="email" placeholder="user.email.com" />
+                <p>Password</p>
+                <input type="password" name="password" placeholder="********" />
+                <button type="submit" id="button-submit" onClick={handleSubmit}>
+                    Crear
+                </button>
+            </form>
 
-                <form action="" className= "form" ref={form}>
-                    <div className="container_data">
-                        <p>Usuario</p>
-                        <input type="text" name="email"
-                        className="input" placeholder="user@email"/>
+            {/* <p id="info"></p> */}
 
-                        <p>Contraseña</p>
-                        <input type="password" name="password"
-                        className="input" placeholder="********"/>
-                    </div>
-
-                    <button className="boton" onClick ={handleSubmit}>
-                        Registrar
-                    </button>
-                </form>
-            </div>
-        </div>
+            {/* <div className="user-create">
+                <a href="/RecorveryPassword"></a>
+                <a href='/CreateUser'>Crear usuario</a>
+            </div> */}
+        </section>
+    </div>
     );
 }
 

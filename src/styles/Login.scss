@@ -30,7 +30,7 @@
 
 .data-container{
   width: 30rem;
-  height: 40rem;
+  height: 42rem;
   padding: 0 25px;
   margin-top: 6rem;
   position: relative;
@@ -95,6 +95,15 @@
 }
 .user-info button:hover{
   border: solid 4px $color-line-hover;
+}
+
+#info{
+  width: 100%;
+  height: 2rem;
+  // background-color: purple;
+  text-align: left;
+  font-size: 1.5rem;
+  color: $color-text;
 }
 
 .user-create{

@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import UD from '@Logos/UD.png';
 import Login from '@Logos/user-icon.png';
 import '@styles/Header.scss';
-//import '@styles/bootstrap.css';
-
 
 const Header = () => {
 
@@ -12,35 +10,29 @@ const Header = () => {
 		setToggle(!toggle);
 	}
     return(
-        <nav> 
-            <img className="header_img" src={UD} alt="UD"/>
-            <div className="header_centro">
+        <div className="header-container"> 
+            <img className="header-logo" src={UD} alt="UD"/>
+            <nav className="header-nav">
                 <ul>
                     <li>
-                            <a href="/Home">INICIO</a>
+                        <a href="/Home">INICIO</a>
                     </li>
                     <li>
-                            <a href="/GraficaComparativa">GRAFICAS COMPARATIVAS</a>
+                        <a href="/GraficaComparativa">GRAFICAS COMPARATIVAS</a>
                     </li>
                     <li>
-                            <a href="/GraficaProceso">GRAFICA DE PROCESO</a>
+                        <a href="/GraficaProceso">GRAFICA DE PROCESO</a>
                     </li>
                 </ul>
-            
-            </div>
-            <div className="header__menu">
-                <div className="header__menu--profile">
-                    <img src={Login} alt="" onClick={handleToggle}/>
+            </nav>
+            <div className="header-menu">
+                <span className="header-menu--profile" onClick={handleToggle}>
                     <p>Perfil</p>
-                </div>
-                {toggle &&  <li><a href="/">Cerrar Sesión</a></li>}
+                    <img src={Login} alt=""/>
+                </span>
+                {toggle && <li><a href="/">Cerrar Sesión</a></li>}
             </div>
-                
-         </nav>
-
-
-        
-
+         </div>
     );
 }
 

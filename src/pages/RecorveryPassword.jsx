@@ -24,9 +24,9 @@ const dataUsers = [
 ];
 
 const users = dataUsers.map(data => data.user);
-const passwords = dataUsers.map(data => data.password)
+const emails = dataUsers.map(data => data.email)
 
-const Login = () => {
+const RecorveryPassword = () => {
 	const form = useRef(null);
 
 	const handleSubmit = (event) => {
@@ -34,19 +34,22 @@ const Login = () => {
         const formData = new FormData(form.current);
         const data = {
             username: formData.get('user'),
-            password: formData.get('password')
+            email: formData.get('email')
         }
         
         let username = users.find(user => user == data.username);
-        let password = passwords.find(pass => pass === data.password)
+        let email = emails.find(pass => pass === data.email)
 
-        if(typeof(username) === 'string' && typeof(password) === 'string'){
+        const p = document.getElementById('info');
+
+        if(typeof(username) === 'string' && typeof(email) === 'string'){
             // alert(`OK, user: ${username} y password: ${password}`);
-        } else {
-            event.preventDefault();
-            // alert(`Falla, user: ${username} y password: ${password}`);
             const p = document.getElementById('info');
-            p.innerHTML = 'Falla usuario o contrasena'
+            p.innerHTML = 'Se ha enviado la contrasena al correo'
+        } else {
+            // alert(`Falla, user: ${username} y email: ${email}`);
+            event.preventDefault();
+            p.innerHTML = 'Falla usuario o email'
         }
     }
 
@@ -57,20 +60,20 @@ const Login = () => {
         </section>
 
         <section className="data-container">
-            <form action={'/Home'} className="user-info" ref={form}>
+            <form action={'/'} className="user-info" ref={form}>
                 <p>Usuario</p>
                 <input type="text" name="user" placeholder="username" />
-                <p>Contraseña</p>
-                <input type="password" name="password" placeholder="********" />
+                <p>Email</p>
+                <input type="text" name="email" placeholder="user@email.com" />
                 <button type="submit" id="button-submit" onClick={handleSubmit}>
-                    Ingresar
+                    Recuperar
                 </button>
             </form>
 
             <p id="info"></p>
 
             <div className="user-create">
-                <a href="/RecorveryPassword">¿Olvido la contraseña?</a>
+                {/* <a href="/RecorveryPassword"></a> */}
                 <a href='/CreateUser'>Crear usuario</a>
             </div>
         </section>
@@ -78,4 +81,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default RecorveryPassword;

@@ -47,7 +47,7 @@ const data = {
 const Multi_lineal = () => {
 
     return (
-        <div className='MultiAxisChartjs'>
+        <div className='graphic-multiLinea-container'>
             <div className='header'>
                <h1 className='Grafica_proceso'>GRÁFICA DE PROCESO </h1>
             </div>

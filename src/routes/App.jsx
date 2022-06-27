@@ -7,8 +7,9 @@ import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
 import CreateUser from '../pages/CreateUser';
 import Comp_Rendimiento from '../containers/Comp_Rendimientos';
-import  Grafica_comparativas from '../containers/Graficas_home';
-import '../styles/global.css';
+import Grafica_comparativas from '../containers/Graficas_home';
+import RecorveryPassword from '../pages/RecorveryPassword';
+import '../styles/global.scss';
 // import CreateUser from '../pages/CreateUser';
 
 
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path ="/GraficaProceso" element= {< GraficaProceso/>}/>
                 <Route path ="/Grafica_comparativas" element= {<  Grafica_comparativas/>}/>
                 <Route path = "/CreateUser" element = {<CreateUser/>}/>
+                <Route path = "/RecorveryPassword" element={<RecorveryPassword/>}/>
                 {/* <Route path ="/Comp_Rendimiento" element= {<Comp_Rendimiento/>}/> */}
         </Routes>
     );

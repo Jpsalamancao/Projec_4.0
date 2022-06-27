@@ -1,16 +1,18 @@
-.Columns{
+@import 'vars';
+
+.graphic-columns-container{
     width:  500px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.Titel_Columns{
-    color: white;
-   
+    // height: 300px;
+    display: block;
+    border: solid 2px gray;
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
-// .Grafica_proceso {
-//     font-family: Arial;
-//     font-size: 1em;
+.graphic-columns-container h1{
+    color: white;
+}
+
+// .graphic-columns-container canvas{
+//     height: 500px;
 // }

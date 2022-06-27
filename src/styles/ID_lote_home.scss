@@ -1,68 +1,50 @@
+@import 'vars';
 
-  .Performance_box{
-    width: 200px;
-    height: 300px;
-    margin: 5px 28px 5px 10px;
-    padding: 5px 7.5px 7.5px 8px;
-    border-radius: 18px;
-    box-shadow: 0 1.5px 10px 0 var(--ffffff);
-    border: solid 3px rgba(77, 80, 83, 0.81);
-    padding: 0px 30px;
-    box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
-    0 10px 10px rgba(255,255,255, 0.20);
-    position: relative;
-    background-color: #373435;
-  }
+.performance-card{
+  width: 100%;
+  margin: 5px auto;
+  border-radius: 18px;
+  padding: 15px;
+  // box-shadow: 0 10px 18px rgba(255,255,255,0.13), 
+  // 0 10px 10px rgba(255,255,255, 0.20);
+  background-color: $color-box-primary;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  .Puesto{
-    color: white;
-    font-size: 12px;
-    margin: 5px 0px 0px 0px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-  .container_lote{
-    margin: 10px 0px 0px 0;
-    display: flex;
-    justify-content:center;
-    flex-direction: row;
+.performance-card p{
+  width: 50%;
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+}
 
-  }
-  .container_lote p{
-    color: white;
-    font-size: 12px;
-  }
+.item p{
+  width: 100%;
+}
 
-  .container_performance{   
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    
-  }
-  .Con_Lote {
-    box-sizing: border-box;
-    width: 52%;
-    height: 12%;
-    margin-left: 56px;
-    // background: rgb(150, 145, 158);
-    // border: 1px solid rgb(111, 106, 117);
-    // border-radius: 12%;
-    color: rgb(18, 2, 48);
-  }
-  .container_performance p{
-    color: white;
-    font-size: 12px;
-  }
+.performance-card--title{
+  width: 200px;
+  color: $color-text;
+  font-size: 1.5rem;
+  text-align: center;
+}
 
-  .Con_Rendi{
-    box-sizing: border-box;
-    width: 52%;
-    height: 12%;
-    margin-left: 10px;
-    // background: rgb(150, 145, 158);
-    // border: 1px solid rgb(111, 106, 117);
-    // border-radius: 12%;
-    color: rgb(18, 2, 48);
-  }
+.performance-card--data{
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.box{
+  width: 90%;
+  height: 2.2rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: solid 0.5px #707070;
+  background-color: $color-box-primary;
+  color: $color-text;
+}
