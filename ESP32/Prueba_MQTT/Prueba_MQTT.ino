@@ -3,25 +3,38 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <time.h>
- 
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
+
+// Conectar a la red WiFi 
 const char* ssid = "Krloz Medina";
 const char* password =  "F@mili@571112";
+
+// Conectar al servidor MQTT
 const char* mqttServer = "192.168.5.221";
-const char* ntpServer = "co.pool.ntp.org";
 const int mqttPort = 1234;
 
+// Conectar al servidor Network Time Protocol
+const char* ntpServer = "co.pool.ntp.org";
 const long  gmtOffset_sec = -21600;
 const int   daylightOffset_sec = 3600;
 
-int dato = 1;
+
+int dato = 5;
 char* topic;
 int success = 0;
 int error = 0;
 char fecha[50];
+char id[50];
 struct tm timeinfo;
  
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+#define DHTPIN 13
+#define DHTTYPE DHT11
+DHT_Unified dht(DHTPIN, DHTTYPE);
  
 void setup() {
   //Configuracion puerto serial
@@ -55,6 +68,10 @@ void setup() {
 
   //Configuracion al servido NTP (Network Time Protocole)
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+
+  dht.begin();
+  Serial.println(F("DHTxx Unified Sensor Example"));
+  sensor_t sensor;
 }
  
 void loop() {
@@ -64,55 +81,129 @@ void loop() {
     return;
   }
 
+  String lote = "L1020";
   strftime(fecha, 50, "%d-%B-%Y %H:%M:%S", &timeinfo);
+  strftime(id, 50, "%y%j%H%M", &timeinfo);
+  //id = lote-fechaint
   
   //JSON
   StaticJsonBuffer <300> JSONbuffer;
   JsonObject& JSONencoder = JSONbuffer.createObject();
 
+  // Get temperature event and print its value.
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  /*if (isnan(event.temperature)) {
+    Serial.println(F("Error reading temperature!"));
+  }
+  else {
+    Serial.print(F("Temperature: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+  }
+  // Get humidity event and print its value.
+  dht.humidity().getEvent(&event);
+  if (isnan(event.relative_humidity)) {
+    Serial.println(F("Error reading humidity!"));
+  }
+  else {
+    Serial.print(F("Humidity: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+  }*/
+
+//   {
+//     "id":"103lok",
+//     "topic":"record",
+//     "temperatura":"27.0",
+//     "time_proceso":"1995-12-17T03:24:00",
+//     "Lote":"L1010jp4"
+// }
+
   switch (dato) {
     case 1:
-      JSONencoder["id"] = "l1";
-      JSONencoder["temperatura"] = random(20, 120);
+      JSONencoder["id"] = id; //221512024
+      JSONencoder["temperatura"] = String(event.temperature);  //random(20, 120);
       JSONencoder["time_proceso"] = fecha;  //"2022-23-23T16:11:07";
-      JSONencoder["lote_proceso"] = "L1010";
+      JSONencoder["Lote"] = lote;
       topic = "record";
-      dato = 2;
+      // dato = 2;
       break;
     case 2:
-      JSONencoder["id"] = "l1";
-      JSONencoder["producto"] = "varsol";
-      JSONencoder["lote_saldo"] = "L1102";
-      JSONencoder["cantidad"] = random(0,30);
-      topic = "addProduct";
-      dato = 3;
+//     {
+//     "id":"l1",
+//     "topic":"charger",
+//     "add_Materiaprima":"calcio",
+//     "catidad_kg":25.0,
+//     "time_proceso":"1995-12-17T03:24:00",
+//     "Lote_Materiaprima":"cal1022",
+//     "Lote":"L1010"
+// }
+      JSONencoder["id"] = id; //"l1";
+      JSONencoder["topic"] = "charger";
+      JSONencoder["add_Materiaprima"] = "Varsol";
+      JSONencoder["catidad_kg"] = random(1, 100);
+      JSONencoder["time_proceso"] = fecha;  //"2022-23-23T16:11:07";
+      JSONencoder["Lote_Materiaprima"] = "Var1020";
+      JSONencoder["Lote"] = lote;
+      topic = "charger";
+      // dato = 3;
       break;
     case 3:
-      JSONencoder["id"] = "l1";
-      JSONencoder["materia_prima"] = "cobalto";
-      JSONencoder["cantidad"] = random(0,30);
-      JSONencoder["lote_mp"] = "L1410";
-      topic = "charger";
+//     {
+//     "id":"l1",
+//     "topic":"addProduct",
+//     "add_producto":"calcio",
+//     "catidad_kg":25.0,
+//     "lote_add_producto":"l3025",
+//     "Lote":"L1010"
+// }
+      JSONencoder["id"] = id; "l1";
+      JSONencoder["add_producto"] = "cobalto";
+      JSONencoder["catidad_kg"] = random(0,30);
+      JSONencoder["lote_add_producto"] = "L1410";
+      JSONencoder["Lote"] = lote;
+      topic = "addProduct";
       dato = 4;
       break;
     case 4:
-      JSONencoder["id"] = "l1";
-      JSONencoder["cantidad_producida"] = random(0,20);
-      JSONencoder["cantidad_empacada"] = random(0,20);
-      JSONencoder["rendimiento"] = "89.7";
-      topic = "perform";
+//     {
+//     "id":"ñññ",
+//     "topic":"performance",
+//     "producto":"calcio",
+//     "Rendimiento_kg":"l30",
+//     "time_proceso":"1995-12-17T03:24:00",
+//     "Lote":"L1010"
+// }
+      JSONencoder["id"] = id; // "l1";
+      // JSONencoder["topic"] = "performance";
+      JSONencoder["producto"] = "Calcio";
+      JSONencoder["Rendimiento_kg"] = "l30";
+      JSONencoder["time_proceso"] = fecha;  //"2022-23-23T16:11:07";
+      JSONencoder["Lote"] = lote;
+      topic = "performance";
       dato = 5;
       break;
     case 5:
-      JSONencoder["id"] = "l1";
-      JSONencoder["nombre_muestra"] = "M4312";
-      JSONencoder["resultado_muestra"] = random(0, 100);
-      dato = 1;
-      topic = "quality";
+//     {
+//     "id":"l1",
+//     "producto":"calcio",
+//     "Quality":"concentracion del producto 15%",
+//     "time_proceso":"1995-12-17T03:24:00",
+//     "Lote":"L1010",
+//     "topic":"qualityproduct"
+// }
+      JSONencoder["id"] = id; // "l1";
+      JSONencoder["producto"] = "Manganecio";
+      JSONencoder["Quality"] = "Concentracion 28%";
+      JSONencoder["time_proceso"] = fecha;  //"2022-23-23T16:11:07";
+      JSONencoder["Lote"] = lote;
+      // dato = 1;
+      topic = "qualityproduct";
       break;
   }
 
-  char JSONmessageBuffer[100];
+  char JSONmessageBuffer[300];
   JSONencoder.printTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
   Serial.println("Sending message to MQTT topic..");
   Serial.println(JSONmessageBuffer);
@@ -137,5 +228,5 @@ void loop() {
   Serial.println("-------------");
   client.loop();
 
-  delay(10000);
+  delay(60000);
 }
