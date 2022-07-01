@@ -1,7 +1,6 @@
 const mosca = require('mosca');
 const http = require('https');
 const mqtt = require('mqtt');
-const { connect } = require('http2');
 
 const topicRecord = 'record';
 const topicAdd = 'addProduct';
@@ -33,7 +32,7 @@ const selectTopic = (topic) => {
 }
 
 // Servidor MQTT
-const hostMQTT = 'mqtt://localhost:1234'; // 'mqtt://192.168.5.221:1234';
+const hostMQTT = 'mqtt://192.168.5.221:1234';
 const settings = {port: 1234}
 const broker = new mosca.Server(settings)
 
@@ -44,7 +43,7 @@ broker.on('published', (packet)=>{
     console.clear();
     console.log(`MQTT:Desde el topic '${topic}', se envia el mensaje\n${message}`);
 
-    selectTopic();
+    selectTopic(topic);
 })
 
 const client = mqtt.connect(hostMQTT);
@@ -74,7 +73,7 @@ function connectMQTT(){
 }
 
 //Configuracion HTTP
-const hostHTTP = 'localhost'; // '192.168.5.221';
+const hostHTTP = '192.168.5.221';
 const portHTTP = 3000;
 
 const optionsHTTP = {
@@ -109,17 +108,7 @@ server.listen(portHTTP, hostHTTP, () => {
     connectMQTT();
 })
 
-
-
-
-
-
-
-//HTTP server
-
-
-
-
+// -----------CODIGO VIEJO-----------------//
 // const mosca = require('mosca');
 // const http = require('https');
 // const mqtt = require('mqtt');
