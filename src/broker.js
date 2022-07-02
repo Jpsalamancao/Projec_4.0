@@ -9,34 +9,54 @@ const topicPerformance = 'performance';
 const topicQuality = 'qualityproduct';
 
 
-const selectTopic = (topic) => {
+// AWS
+const optionsAWS = {
+    hostname: 'keb6atfcl0.execute-api.us-east-1.amazonaws.com',
+    port: 443,
+    // path: '/prueba/handlerdata/qualityproduct',
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}
+
+function selectTopic(topic){
     switch(topic){
         case topicRecord:
-            optionsHTTP.path = '/prueba/handlerdata/recordsprocess';
+            optionsAWS.path = '/prueba/handlerdata/recordsprocess';
             break;
         case topicAdd:
-            optionsHTTP.path = '/prueba/handlerdata/addproducto';
+            optionsAWS.path = '/prueba/handlerdata/addproducto';
             break;
         case topicCharger:
-            optionsHTTP.path = '/prueba/handlerdata/chargerawmaterial';
+            optionsAWS.path = '/prueba/handlerdata/chargerawmaterial';
             break;
         case topicPerformance:
-            optionsHTTP.path = '/prueba/handlerdata/performance';
+            optionsAWS.path = '/prueba/handlerdata/performance';
             break;
         case topicQuality:
-            optionsHTTP.path = '/prueba/handlerdata/qualityproduct';
+            optionsAWS.path = '/prueba/handlerdata/qualityproduct';
             break;
         default:
             console.log(`\n%c${'El topic es incorrecto'}`)
     }
 }
 
-// Servidor MQTT
-const hostMQTT = 'mqtt://192.168.5.221:1234';
+const reqAWS = () => {
+    return http.request(optionsAWS, res => {
+        console.log(`\nHTTP: Status: ${res.statusCode} ${res.statusMessage}`)
+        res.on('data', d => {
+            console.log(`\nAWS responde desde ${optionsAWS.path}`)
+            process.stdout.write(d)
+        })
+    })
+}
+
+// MQTT
 const settings = {port: 1234}
 const broker = new mosca.Server(settings)
 
-broker.on('published', (packet)=>{
+broker.on('published', (packet) => {
     message = packet.payload.toString();
     topic = packet.topic.toString();
 
@@ -46,21 +66,8 @@ broker.on('published', (packet)=>{
     selectTopic(topic);
 })
 
+const hostMQTT = 'mqtt://192.168.5.221:1234';
 const client = mqtt.connect(hostMQTT);
-
-function messageMQTT(){
-    client.on('message', (topic, message) => {
-        data = JSON.parse(message);
-        data.topic = topic;
-        
-        req = reqHTTP();          
-        req.on('error', error => {
-            console.error(error)
-        })
-        req.write(JSON.stringify(data))
-        req.end()
-    })
-}
 
 function connectMQTT(){
     client.on('connect', ()=>{
@@ -72,35 +79,29 @@ function connectMQTT(){
     })
 }
 
-//Configuracion HTTP
+function messageMQTT(){
+    client.on('message', (topic, message) => {
+        data = JSON.parse(message);
+        data.topic = topic;
+        
+        req = reqAWS();          
+        req.on('error', error => {
+            console.error(error)
+        })
+        req.write(JSON.stringify(data))
+        req.end()
+    })
+}
+
+//Servidor HTTP
 const hostHTTP = '192.168.5.221';
 const portHTTP = 3000;
 
-const optionsHTTP = {
-    hostname: 'keb6atfcl0.execute-api.us-east-1.amazonaws.com',
-    port: 443,
-    // path: '/prueba/handlerdata/qualityproduct',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-}
-
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hola mundo')
+    // res.setHeader('Content-Type', 'text/plain');
+    // res.end('Hola mundo')
 })
-
-const reqHTTP = () => {
-    return http.request(optionsHTTP, res => {
-        console.log(`\nHTTP: Status: ${res.statusCode} ${res.statusMessage}`)
-        res.on('data', d => {
-            console.log(`\nAWS responde desde ${optionsHTTP.path}`)
-            process.stdout.write(d)
-        })
-    })
-}
 
 server.listen(portHTTP, hostHTTP, () => {
     console.log('Servidor funcionando en', hostHTTP, portHTTP);
